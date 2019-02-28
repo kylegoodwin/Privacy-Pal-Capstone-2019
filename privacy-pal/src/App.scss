@@ -1,0 +1,38 @@
+html{
+  margin: 0;
+  padding: 0;
+  
+}
+
+.logo{
+  height: 4em;
+}
+
+.header{
+  
+  ul{
+    list-style: none;
+    margin: 0;
+  }
+  li{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 2em;
+  }
+
+  background-color: lightgray
+}
+
+.bigimage{
+  background-image: url("/img/kids1.jpg");
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+
+  h1{
+    padding: 1em;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 2px darkgray;
+  }
+}
