@@ -10,22 +10,22 @@ import Footer from './Footer';
 class App extends Component {
   render() {
     return (
+      <BrowserRouter>
       <div className="App">
-        
       <NavBar />
 
       <main>
-        <BrowserRouter>
+
           <Route path="/home-page" component={MainBody}/>
           {/* <MainBody></MainBody> */}
           <Route path="/learning-page" component={LearningPage}/>
           {/* <LearningPage></LearningPage> */}
           <Redirect to="/home-page"/>
-        </BrowserRouter>
       </main>
 
       <Footer></Footer>
       </div>
+      </BrowserRouter>
     );
   }
 }
@@ -33,13 +33,12 @@ class App extends Component {
 class NavBar extends Component {
   render() {
     return (
-      <div className="navbar fixed-top">
-        <a>
-          {/* <Header></Header> */}
-          <img src="img/HeaderLogo.png" className="logo"></img>
-        </a>
         <div className="navLinks">
           <ul>
+          <li>
+          {/* <Header></Header> */}
+          <img src="img/HeaderLogo.png" className="logo"></img>
+        </li>
             <li className="nav-item">
               <NavLink to="/home-page" className="nav-link" activeClassName="selected" activeStyle={{fontWeight: "bold", color:"green"}}>Home</NavLink>
             </li>
@@ -51,7 +50,6 @@ class NavBar extends Component {
             </li> */}
           </ul>
         </div>
-      </div>
     );
   }
 }
