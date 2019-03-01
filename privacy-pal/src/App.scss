@@ -36,3 +36,58 @@ html{
     text-shadow: 2px 2px 2px darkgray;
   }
 }
+
+.icons{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  ul{
+    list-style: none;
+    margin: 0;
+  }
+  li{
+    display: inline-block;
+    padding: 2em;
+    div{
+      width: 200px;
+    }
+  }
+  img{
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.modulesDisplay{
+  background-color: lightgray;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  .screenshot{
+    background-image: url("/img/screenshot.png");
+    height: 600px;
+    width: 33%;
+    padding-left: 5em;
+  }
+  img{
+    width: 33%;
+  }
+}
+
+.signUp{
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.footer{
+  ul{
+    list-style: none;
+    margin: 0;
+  }
+  li{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 2em;
+  }
+  padding-top: 1em;
+  background-color: darkgray;
+}
