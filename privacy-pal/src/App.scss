@@ -1,3 +1,7 @@
+$maroon: #411717;
+$gold: #f5b447;
+
+
 html{
   margin: 0;
   padding: 0;
@@ -8,7 +12,12 @@ html{
   height: 4em;
 }
 
-.navLinks{
+.flex-container {
+  justify-content: space-between;
+  display: flex;
+}
+
+.navLinks, .header{
   
   ul{
     list-style: none;
@@ -20,11 +29,20 @@ html{
     padding-left: 2em;
   }
 
-  a, a:visited{
-    color: black;
+  a, p{
+    color: $maroon;
+    font-weight: bold;
+    text-decoration:  none;
   }
 
-  background-color: lightgray
+  .selected{
+    color: $gold;
+  }
+
+  p{
+    padding-top: .5em;
+    padding-right: 1em;
+  }
 
 
 
@@ -35,11 +53,21 @@ html{
   background-size: cover;
   height: 500px;
   width: 100%;
+  padding: 2em;
 
   h1{
     padding: 1em;
     margin: 0;
     color: darkgray;
+    font-size: 2em;
+    color: $gold;
+  }
+
+  .text-container{
+    width: 75%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  
   }
 }
 

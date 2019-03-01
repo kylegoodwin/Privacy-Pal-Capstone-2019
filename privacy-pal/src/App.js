@@ -33,6 +33,8 @@ class App extends Component {
 class NavBar extends Component {
   render() {
     return (
+      <div class="header flex-container">
+        <div class ="flex-item">
         <div className="navLinks">
           <ul>
           <li>
@@ -40,15 +42,22 @@ class NavBar extends Component {
           <img src="img/HeaderLogo.png" className="logo"></img>
         </li>
             <li className="nav-item">
-              <NavLink to="/home-page" className="nav-link" activeClassName="selected" activeStyle={{fontWeight: "bold", color:"green"}}>Home</NavLink>
+              <NavLink to="/home-page" className="nav-link" activeClassName="selected" >Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/learning-page" className="nav-link" activeClassName="selected" activeStyle={{fontWeight: "bold", color:"green"}}>Learn</NavLink>
+              <NavLink to="/learning-page" className="nav-link" activeClassName="selected" >Learn</NavLink>
             </li>
             {/* <li className="nav-item">
               <NavLink to="/" className="nav-link" activeClassName="selected" activeStyle={{fontWeight: "bold", color:"green"}}>About</NavLink>
             </li> */}
           </ul>
+          </div>
+          </div>
+          <div class="flex-item">
+          <div className="sign-in">
+            <p>Sign In</p>
+          </div>
+        </div>
         </div>
     );
   }

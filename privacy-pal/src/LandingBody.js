@@ -6,7 +6,9 @@ class MainBody extends Component {
       return (
         <div>
           <section className="bigimage">
+          <div class="text-container">
             <h1> What are you doing to protect your kids online? </h1>
+            </div>
           </section>
           <section className="icons" align="center"> 
             <h1> Of the many features, you will learn: </h1>
