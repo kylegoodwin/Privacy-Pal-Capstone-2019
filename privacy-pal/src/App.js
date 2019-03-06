@@ -4,7 +4,6 @@ import logo from './logo.svg';
 import './App.scss';
 import SignUpForm from './SignUpForm';
 import LoginPage from './LoginPage';
-import Header from './Header';
 import MainBody from './LandingBody';
 import LearningPage from './LearningPage'
 import Footer from './Footer';
@@ -25,13 +24,12 @@ class App extends Component {
       <div>
         <BrowserRouter>
         <div className="App">
-          <NavBar />
 
           <main>
             <Route path="/home-page" component={MainBody}/>
-            {/* <MainBody></MainBody> */}
             <Route path="/learning-page" component={LearningPage}/>
-            {/* <LearningPage></LearningPage> */}
+            <Route path="/sign-in" component={LoginPage}/>
+
             <Redirect to="/home-page"/>
           </main>
 
@@ -40,53 +38,6 @@ class App extends Component {
         </BrowserRouter>
       </div>
     )
-  }
-}
-
-class NavBar extends Component {
-  
-  // Signs the user out of firebase
-  handleSignOut = () => {
-    this.setState({ errorMessage: null });
-
-    firebase.auth().signOut()
-      .catch((err) => {
-        this.setState({ errorMessage: err.message })
-      })
-  }
-  
-  render() {
-    return (
-      <div className="header flex-container">
-        <div className="flex-item">
-          <div className="navLinks">
-            <ul>
-              <li>
-                {/* <Header></Header> */}
-                <img src="img/HeaderLogo.png" className="logo"></img>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/home-page" className="nav-link" activeClassName="selected" >Home</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/learning-page" className="nav-link" activeClassName="selected" >Learn</NavLink>
-              </li>
-              {/* <li className="nav-item">
-                <NavLink to="/" className="nav-link" activeClassName="selected" activeStyle={{fontWeight: "bold", color:"green"}}>About</NavLink>
-              </li> */}
-              <li>
-                <button className="btn btn-primary" onClick={this.handleSignOut}>Log Out</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="flex-item">
-          <div className="sign-in">
-            <button className="btn btn-primary" onClick={this.handleSignOut}>Sign In</button>
-          </div>
-        </div>
-      </div>
-    );
   }
 }
 

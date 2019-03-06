@@ -68,7 +68,6 @@ class LoginPage extends Component {
     render() {
         let content = null;
         if(!this.state.user) {   
-            console.log("i eat ass");
             // If User is logged out
             content = (
                 <SignUpForm
@@ -77,7 +76,6 @@ class LoginPage extends Component {
                 />
             );
         } else {
-            console.log("i eat bass");
             content = (
             <div>
                 <App>

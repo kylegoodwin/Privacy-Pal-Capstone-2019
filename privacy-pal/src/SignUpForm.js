@@ -33,17 +33,19 @@ class SignUpForm extends Component {
 
     render() {
         return(
-            <div className="login-page">
+            <div className="login-register-page">
                 <Row>
                     <Col>
                         <div>
                             <img src="img/HeaderLogo.png" className="logo"></img>
                         </div>
-                        <div className="container sign-up">
-                            <h2 className="sign-up-h2">Sign Up</h2>
+                        <div className="container sign-in-register">
+                            <div>
+                                <h2 className="sign-in-register-h2">Sign Up or Sign In</h2>
+                            </div>
                             <form>
                                 {/* Email */}
-                                <div className="form-group">
+                                <div className="form-group email">
                                     <label htmlFor="email">Email</label>
                                     <input className="form-control"
                                        id="email"
@@ -54,7 +56,7 @@ class SignUpForm extends Component {
                                 </div>
 
                                 {/* Password */}
-                                <div className="form-group">
+                                <div className="form-group password">
                                     <label htmlFor="password">Password</label>
                                     <input className="form-control"
                                        id="password"
@@ -66,8 +68,8 @@ class SignUpForm extends Component {
 
                                 {/* Buttons */}
                                 <div className="form-group">
-                                    <button className="btn btn-primary" onClick={this.handleSignUp}>Sign Up</button>
-                                    <button className="btn btn-primary" onClick={this.handleSignIn}>Sign In</button>
+                                    <button className="btn btn-primary sign-up-button" onClick={this.handleSignUp}>Sign Up</button>
+                                    <button className="btn btn-primary sign-in-button" onClick={this.handleSignIn}>Sign In</button>
                                 </div>
                             </form>
                         </div>
