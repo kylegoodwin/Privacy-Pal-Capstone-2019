@@ -8,9 +8,6 @@ class MainBody extends Component {
   render() {
     return (
       <div>
-        <section>
-          <Header></Header>
-        </section>
         <section className="bigimage">
           <div class="text-container">
             <h1> What are you doing to protect your kids online? </h1>

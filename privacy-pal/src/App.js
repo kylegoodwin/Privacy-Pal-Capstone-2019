@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, NavLink} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.scss';
+import Header from './Header';
 import SignUpForm from './SignUpForm';
 import LoginPage from './LoginPage';
 import MainBody from './LandingBody';
@@ -22,15 +23,18 @@ class App extends Component {
   render() {
     return(
       <div>
-        <BrowserRouter>
-        <div className="App">
 
+
+        <BrowserRouter>
+        
+        <div className="App">
           <main>
+          <Header></Header>
             <Route path="/home-page" component={MainBody}/>
             <Route path="/learning-page" component={LearningPage}/>
             <Route path="/sign-in" component={LoginPage}/>
 
-            <Redirect to="/home-page"/>
+            {/* <Redirect to="/home-page"/> */}
           </main>
 
           <Footer></Footer>
