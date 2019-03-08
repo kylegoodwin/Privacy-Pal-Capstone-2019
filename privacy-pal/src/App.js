@@ -37,9 +37,10 @@ class App extends Component {
             {/* <Redirect to="/home-page"/> */}
           </main>
 
-          <Footer></Footer>
+          
         </div>
         </BrowserRouter>
+          <Footer></Footer>
       </div>
     )
   }

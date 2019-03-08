@@ -57,6 +57,7 @@ html{
 .bigimage{
   background-image: url("/img/kids1.jpg");
   background-size: cover;
+  background-position: center;
   height: 500px;
   width: 100%;
   padding: 2em;
@@ -139,11 +140,10 @@ html{
 }
 
 .footer{
-  position: absolute;
+  //position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
-  margin-top: 2em;
   
   ul{
     list-style: none;
@@ -154,7 +154,6 @@ html{
     vertical-align: middle;
     padding-left: 2em;
   }
-  padding-top: 1em;
   background-color: darkgray;
 }
 
