@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Redirect, Link, NavLink} from 'react-router-dom';
 import firebase from 'firebase/app'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 
 class Header extends Component {
   
@@ -35,16 +36,13 @@ class Header extends Component {
               {/* <li className="nav-item">
                 <NavLink to="/" className="nav-link" activeClassName="selected" activeStyle={{fontWeight: "bold", color:"green"}}>About</NavLink>
               </li> */}
-              <li>
-                <button className="btn btn-primary" onClick={this.handleSignOut}>Log Out</button>
-              </li>
             </ul>
           </div>
         </div>
         <div className="flex-item">
-          <div className="sign-in">
-            <NavLink to="/sign-in" className="nav-link">Sign In</NavLink>
-          </div>
+          <NavLink to="/sign-in" className="nav-link">
+            <button type="button" className="btn btn-outline-danger justify-content-center: super">Sign in</button>
+          </NavLink>    
         </div>
       </div>
     );

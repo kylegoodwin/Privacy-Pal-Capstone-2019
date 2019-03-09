@@ -52,31 +52,34 @@ html{
   }
 
 
-
 }
 
-.bigimage{
-  background-image: url("/img/kids1.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 700px;
-  width: 100%;
-  padding: 2em;
+// .bigimage{
+//   background-image: url("/img/kids1.jpg");
+//   background-size: cover;
+//   background-position: center;
+//   height: 700px;
+//   width: 100%;
+//   padding: 2em;
 
-  h1{
-    padding: 1em;
-    margin: 0;
-    color: darkgray;
-    font-size: 2em;
-    color: $gold;
-  }
+//   h1{
+//     padding: 1em;
+//     margin: 0;
+//     color: darkgray;
+//     font-size: 2em;
+//     color: $gold;
+//   }
 
-  .text-container{
-    width: 75%;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+//   .text-container{
+//     width: 75%;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     border-radius: 5px;
   
-  }
+//   }
+
+.header-image{
+  width: 85%;
+  // height: 500px;
 }
 
 .icons{
@@ -232,6 +235,4 @@ html{
 .current-tab{
   background-color: red;
 }
-
-
 
