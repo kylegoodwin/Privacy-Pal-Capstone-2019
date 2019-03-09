@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header'
 import firebase from 'firebase/app'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavLink} from 'react-router-dom';
 
 class MainBody extends Component {

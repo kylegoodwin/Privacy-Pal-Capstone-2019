@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Redirect, Link, NavLink} from 'react-router-dom';
 import firebase from 'firebase/app'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 
 class Header extends Component {
