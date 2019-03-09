@@ -163,14 +163,76 @@ html{
   //width: 100%;
   display: flex;
   margin: 5vh;
+
+}
+
+
+.quiz-content{
+  padding: 2em;
+  font-family: 'Rubik', sans-serif;
+
+  .writing,.quiz-form{
+    overflow: scroll;
+
+    width: 70%;
+    height: 500px;
+  }
+
+  h1{
+    font-family: 'Merriweather', serif;
+  }
+
 }
 
 .sidebar-container{
-  
   height: 90%;
   background-color: $blue;
   flex-basis: 20%;
   margin-right: 1em;
+
+  .modules-container{
+    background-color: $gray;
+    height: 94%;
+    margin: 1em;
+
+    ul{
+      margin: 0;
+      padding: .5em 0 0 0;
+    }
+
+    li{
+      margin: 0;
+      list-style: none;
+      display: block;
+      margin: auto;
+      width: 80%;
+    }
+  }
+
+  .module-box{
+    background-color: white;
+    border: solid 1px black;
+    margin-top: 1em;
+    padding: 1em;
+
+    .checkbox{
+      height: 25px;
+      width: 25px;
+      border: solid 1px black;
+      margin-right: .5em;
+      display: inline-block;
+    }
+
+    p{
+      padding: 1em;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      vertical-align: top;
+      font-weight: bold;
+    }
+  }
 }
 
 .quiz-container{
@@ -198,6 +260,7 @@ html{
       width: calc(100%/3);
       border-style: solid;
       border-width:  1px 0px 1px 1px;
+      font-weight: bold;
 
 
       p{
@@ -220,17 +283,26 @@ html{
   button{
     border-radius: 0;
     background-color: $red;
-    height: 3em;
-    width: 6em;
     margin: 1em 1em 1em 0;
+    font-size: 1em;
+    padding: 1em;
+    width: 6em;
   }
   button:last-of-type{
     background-color: $green;
+
   }
+
+
+  
+}
+
+.goldbutton{
+  background-color: $gold !important;
 }
 
 .current-tab{
-  background-color: red;
+  background-color: $green;
 }
 
 
