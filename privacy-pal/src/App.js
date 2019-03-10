@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, NavLink} from 'react-router-dom';
 import logo from './logo.svg';
-import './App.scss';
 import Header from './Header';
 import SignUpForm from './SignUpForm';
 import LoginPage from './LoginPage';
-import MainBody from './LandingBody';
+import MainBody from './LandingPage';
 import LearningPage from './LearningPage'
 import Footer from './Footer';
-import firebase from 'firebase/app'
+import firebase from 'firebase/app';
+import './App.scss';
 
 class App extends Component {
   

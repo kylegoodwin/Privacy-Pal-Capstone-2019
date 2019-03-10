@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './Header'
 import firebase from 'firebase/app'
 import {NavLink} from 'react-router-dom';
+import './LandingPage.scss';
 
 class MainBody extends Component {
   render() {

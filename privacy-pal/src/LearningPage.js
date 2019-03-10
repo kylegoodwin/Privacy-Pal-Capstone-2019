@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
 import Form from './Form';
+import './LearningPage.scss';
 
 class LearningPage extends Component {
 
@@ -49,7 +49,10 @@ class LearningPage extends Component {
     return (
       <div className="learning-body">
         <SideBar modulesList={this.state.titles}></SideBar>
-        <Quiz lessonData={lesson} currentTab={this.state.tabNum} backButtonFunc={this.goBack} forwardButtonFunc={this.goForward}></Quiz>
+        <Quiz lessonData={lesson} 
+              currentTab={this.state.tabNum} 
+              backButtonFunc={this.goBack} 
+              forwardButtonFunc={this.goForward}></Quiz>
       </div>
     );
   }
@@ -128,7 +131,7 @@ class ProgressBar extends Component {
     return (
       <div className="quiz-progress">
         <ul>
-          <li className={((this.props.currentTab >= 1) ? 'current-tab' : "")}>
+          <li className={((this.props.currentTab >= 1) ? 'current-tab' : "")} onClick="">
             <p>Why</p>
           </li>
           <li className={((this.props.currentTab >= 2) ? 'current-tab' : "")}>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Redirect, Link, NavLink} from 'react-router-dom';
 import firebase from 'firebase/app'
 import { Button } from 'react-bootstrap';
+import './Header.scss';
 
 class Header extends Component {
   

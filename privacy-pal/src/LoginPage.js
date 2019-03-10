@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SignUpForm from './SignUpForm';
 import App from './App';
 import firebase from 'firebase/app';
+import './LoginPage.scss'
 
 class LoginPage extends Component {
     constructor(props) {
