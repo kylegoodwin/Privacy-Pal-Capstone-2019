@@ -25,7 +25,9 @@ class Header extends Component {
             <ul>
               <li>
                 {/* <Header></Header> */}
-                <img src="img/HeaderLogo.png" className="logo"></img>
+                <Link to="/home-page">
+                  <img src="img/HeaderLogo.png" className="logo"></img>
+                </Link>
               </li>
               <li className="nav-item">
                 <NavLink to="/home-page" className="nav-link" activeClassName="selected" >Home</NavLink>

@@ -54,11 +54,12 @@ html{
     padding: 2em;
     font-family: 'Rubik', sans-serif;
   
-    .writing,.quiz-form{
-      overflow: scroll;
+    .quiz-form,.writing{
+      overflow-y: scroll;
+      overflow-x: hidden;
   
       width: 70%;
-      height: 500px;
+      height: 50vh;
     }
   
     h1{
@@ -124,6 +125,7 @@ html{
     background-color: $gray;
     position: relative;
     padding-right: 1em;
+    overflow: hidden;
   
     .quiz-progress{
       
