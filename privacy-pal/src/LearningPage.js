@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Form from './Form';
 import './LearningPage.scss';
+import LocationQuiz from './LocationQuiz';
 
 class LearningPage extends Component {
 
@@ -131,7 +132,7 @@ class ProgressBar extends Component {
     return (
       <div className="quiz-progress">
         <ul>
-          <li className={((this.props.currentTab >= 1) ? 'current-tab' : "")} onClick="">
+          <li className={((this.props.currentTab >= 1) ? 'current-tab' : "")}>
             <p>Why</p>
           </li>
           <li className={((this.props.currentTab >= 2) ? 'current-tab' : "")}>
@@ -156,11 +157,9 @@ class QuizContent extends Component {
   render() {
     return (
       <div className="quiz-content">
-        <div className="quiz-form">
         {(this.props.currentTab == 1)? (<FirstTab lessonData={this.props.lessonData} />): ""}
         {(this.props.currentTab == 2)? (<SecondTab lessonData={this.props.lessonData} />): ""}
         {(this.props.currentTab == 3)? (<ThirdTab lessonData={this.props.lessonData} />): ""}
-        </div>
       </div>
     )
   }
@@ -211,11 +210,7 @@ class SecondTab extends Component {
 class ThirdTab extends Component {
   render() {
     return (
-      <div className="quiz-form">
-
-      <Form></Form>
-
-      </div>
+      <LocationQuiz />
     )
   }
 }
