@@ -19,6 +19,7 @@ class Header extends Component {
   
   render() {
     return (
+      <div className="navbar-wrapper">
       <div className="header flex-container">
         <div className="flex-item">
           <div className="navLinks">
@@ -44,6 +45,7 @@ class Header extends Component {
             <button type="button" className="btn btn-outline-danger justify-content-center: super">Sign in</button>
           </NavLink>    
         </div>
+      </div>
       </div>
     );
   }

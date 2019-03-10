@@ -5,14 +5,32 @@ $gray: #f5f6f7;
 $green: #90c46a;
 $red: #ce8585;
 
-// .bigimage{
-//   background-image: url("/img/kids1.jpg");
-//   background-size: cover;
-//   background-position: center;
-//   height: 700px;
-//   width: 100%;
-//   padding: 2em;
+#bigImage{
+  background-image: url("/img/kids_guitar.png");
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  width: 100%;
+  // padding: 1em;
+  background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    // align-items: center;
+    display: flex;
+}
 
+
+#who-we-are {
+  color: white;
+  padding: 20px 0px 0px 0px;
+}
+
+.image-text {
+  color: white;
+  font-family: 'Merriweather';
+}
 //   h1{
 //     padding: 1em;
 //     margin: 0;
@@ -33,10 +51,24 @@ $red: #ce8585;
   // height: 500px;
 }
 
+h1, h2 {
+  font-family: 'Merriweather';
+}
+
+#icons-heading {
+  padding: 0px 0px 30px 0px;
+  font-family: 'Merriweather';
+}
+
+.icon-caption {
+  padding: 20px 0px 0px 0px;
+}
+
 .icons{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 100px 0px 100px 0px;
   ul{
     list-style: none;
     margin: 0;
