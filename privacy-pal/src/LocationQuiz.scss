@@ -10,7 +10,6 @@
     width: 338px;
     height: 600px;
     background-size: cover;
-
 }
 
 #one, #two, #three{
@@ -22,6 +21,10 @@
 #one{
     left: 80px;
     top:  368px;
+}
+
+.one-selected{
+    background-color:gray;
 }
 
 #two{
