@@ -56,7 +56,8 @@ class LearningPage extends Component {
         <Quiz lessonData={lesson}
           currentTab={this.state.tabNum}
           backButtonFunc={this.goBack}
-          forwardButtonFunc={this.goForward}></Quiz>
+          forwardButtonFunc={this.goForward}>
+        </Quiz>
       </div>
     );
   }
