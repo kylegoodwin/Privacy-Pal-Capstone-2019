@@ -193,8 +193,8 @@ class FirstTab extends Component {
           </p>
         </div>
 
-        <div className="image-container">
-          <img src="/img/NYTimesScreenshot.png" width="400" height="400"/>
+        <div className="image-container" style={ {backgroundImage: "url(/img/NYTimesScreenshot.png)"}} >
+
         </div>
       </div>
     )
