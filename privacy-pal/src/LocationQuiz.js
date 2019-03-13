@@ -48,10 +48,9 @@ class BeginQuiz extends Component {
                         with them. It is up to you to choose which apps you should be sharing
                         your location with, and which ones to block from sharing your
                     </p>
+                    <button type="button" class="btn btn-outline-dark btn-lg" onClick={this.props.nextQuestion}>Let's Begin!</button>
                 </div>
-                <div className="begin-button">
-                    <button onClick={this.props.nextQuestion}>Let's Begin!</button>
-                </div>
+               
             </div>
         )
     }
@@ -86,23 +85,15 @@ class Q1 extends Component {
 
     render() {
 
-        const style = {
-            backgroundImage: "url('" + process.env.PUBLIC_URL + "/img/screenshot-1.jpg')",
-        }
-
         return (
             <div className="location-quiz-container">
                 <div className="screenshot-container">
-                    <div style={style} className="phone-screenshot">
-                        <div id="one" onClick={this.showBox}></div>
-                        <div id="two" onClick={this.showBox}></div>
-                        <div id="three" onClick={this.showBox}></div>
-                    </div>
+                    <img src="/img/screenshot-1.jpg" />
                 </div>
                 <div className="reveal-container">
 
                     {!this.state.hasSelected ? (
-                        <div className="text-center">
+                        <div className="text">
                             <h2>Please Select The Option to Share Your Location</h2>
                             <p>
                                 This is an example screenshot of how a phone application will ask for your location.

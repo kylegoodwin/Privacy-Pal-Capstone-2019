@@ -15,7 +15,6 @@ class Header extends Component {
         this.setState({ errorMessage: err.message })
       })
   }
-
   render() {
     return (
       <div className="navbar-wrapper">
