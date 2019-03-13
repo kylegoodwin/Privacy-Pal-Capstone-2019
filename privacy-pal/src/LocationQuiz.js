@@ -26,6 +26,7 @@ class LocationQuiz extends Component {
                 {(this.state.questionNum == 1) ? (<BeginQuiz nextQuestion={this.nextQuestion} />) : ""}
                 {(this.state.questionNum == 2) ? (<Q1 nextQuestion={this.nextQuestion} />) : ""}
                 {(this.state.questionNum == 3) ? (<Q2 nextQuestion={this.nextQuestion} />) : ""}
+                {(this.state.questionNum == 4) ? (<Q3 nextQuestion={this.nextQuestion} />) : ""}
             </div>
         );
     }
@@ -183,6 +184,78 @@ class Q2 extends Component {
                                     <Button id="one" variant="outline-primary" onClick={this.showBox}>Allow</Button>
                                 <br className="text-center " /> 
                                     <Button id="two" variant="outline-primary" onClick={this.showBox}>Don't Allow</Button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div>
+                            <h1> How did you do?</h1>
+                            <p>{this.state.displayText}</p>
+                            <button id="next-question" className="next-arrow" onClick={this.props.nextQuestion}>
+                                Next Question
+                            </button>
+                        </div>
+
+                        )
+                    }
+                </div>
+            </div>
+        )
+    }
+}
+
+class Q3 extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            displayText: "",
+            hasSelected: false
+        }
+    }
+
+    showBox = (event) => {
+
+        if (event.target.id == "one") {
+            this.setState({ displayText: "This is a risky choice that could be damaging! There are a variety of dangers underneath accepting all terms through 'ok'."});
+        } else {
+            this.setState({ displayText: "This is the correct choice! In this case you have very little information on what the app is gaining access too so it's a good idea to find out more!" });
+        } 
+
+        this.setState({ hasSelected: 'true' })
+        
+        console.log(this.props)
+        console.log(this.state)
+
+    }
+
+    render() {
+        let mainImage= ''
+        if(this.state.hasSelected) {
+            mainImage = '/img/angry_birds_terms.png';
+        } else {
+            mainImage = '/img/angry_birds.png';
+        }
+        return (
+            <div className="location-quiz-container">
+                <div className="screenshot-container">
+                    <img id="angryBirdsPic" src={mainImage} />
+                </div>
+                <div className="reveal-container">
+
+                    {!this.state.hasSelected ? (
+                        <div className="text">
+                            <h2>Please Select The Option to Share Your Location</h2>
+                            <p>
+                                This is an example of choice that you experience often with games. Notice how in this instance instead of 
+                                individually accepting different terms all your data rights are lumped together. What's the best 
+                                choice?
+                            </p>
+                            <h2>Accept or View The Terms?</h2>
+                            <div className="buttons-container">
+                                <br className="text-center " /> 
+                                    <Button id="one" variant="outline-primary" onClick={this.showBox}>Ok</Button>
+                                <br className="text-center" />
+                                    <Button id="two" variant="outline-primary" onClick={this.showBox}>Terms</Button>
                             </div>
                         </div>
                     ) : (
