@@ -1,3 +1,17 @@
+.quiz-overview-container{
+    height: 600px;
+
+    .quiz-overview{
+        background-color: gray;
+        text-align: center;
+    }
+
+    .begin-button{
+        background-color: skyblue;
+        align-content: center;
+    }
+}
+
 .location-quiz-container{
     display: flex;
 }
@@ -10,28 +24,16 @@
     width: 338px;
     height: 600px;
     background-size: cover;
+}
 
+.buttons-container{
+    display: flex;
 }
 
 #one, #two, #three{
-    position: absolute;
-    width: 240px ;
-    height: 40px ;
-}
-
-#one{
-    left: 80px;
-    top:  368px;
-}
-
-#two{
-    left: 80px;
-    top:  408px;
-}
-
-#three{
-    left: 80px;
-    top:  448px;
+    flex: 1;
+    padding: 1em;
+    margin-top: .5em;
 }
 
 .reveal-container{

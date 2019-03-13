@@ -10,8 +10,11 @@ class LearningPage extends Component {
     super(props);
 
     var myMap = new Map();
+    myMap.set("Location", true)
     myMap.set("Identity", true)
     myMap.set("Passwords", false)
+    myMap.set("Purchasing", true)
+    myMap.set("Phishing", false)
     this.state = {
       tabNum: 1,
       titles: myMap,
@@ -35,11 +38,11 @@ class LearningPage extends Component {
   render() {
     let lesson = {
       sectionOne: {
-        title: "Why should you care about your identity online?",
+        title: "Why should you care about your sharing your location?",
         text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellation",
       },
       sectionTwo: {
-        title: "Example: Harvard Rescinds Admission Of 10 Students Over Obscene Facebook Messages",
+        title: "Example: Local News and Weather Apps are Selling Your Phone Location",
         text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellation",
       },
       image: "url/pic"
@@ -50,10 +53,11 @@ class LearningPage extends Component {
     return (
       <div className="learning-body">
         <SideBar modulesList={this.state.titles}></SideBar>
-        <Quiz lessonData={lesson} 
-              currentTab={this.state.tabNum} 
-              backButtonFunc={this.goBack} 
-              forwardButtonFunc={this.goForward}></Quiz>
+        <Quiz lessonData={lesson}
+          currentTab={this.state.tabNum}
+          backButtonFunc={this.goBack}
+          forwardButtonFunc={this.goForward}>
+        </Quiz>
       </div>
     );
   }
@@ -136,7 +140,7 @@ class ProgressBar extends Component {
             <p>Why</p>
           </li>
           <li className={((this.props.currentTab >= 2) ? 'current-tab' : "")}>
-            <p>Managing Your Presence</p>
+            <p>The Importance of Sharing Location</p>
           </li>
           <li className={((this.props.currentTab >= 3) ? 'current-tab' : "")}>
             <p>Quiz</p>
@@ -157,9 +161,9 @@ class QuizContent extends Component {
   render() {
     return (
       <div className="quiz-content">
-        {(this.props.currentTab == 1)? (<FirstTab lessonData={this.props.lessonData} />): ""}
-        {(this.props.currentTab == 2)? (<SecondTab lessonData={this.props.lessonData} />): ""}
-        {(this.props.currentTab == 3)? (<ThirdTab lessonData={this.props.lessonData} />): ""}
+        {(this.props.currentTab == 1) ? (<FirstTab lessonData={this.props.lessonData} />) : ""}
+        {(this.props.currentTab == 2) ? (<SecondTab lessonData={this.props.lessonData} />) : ""}
+        {(this.props.currentTab == 3) ? (<ThirdTab lessonData={this.props.lessonData} />) : ""}
       </div>
     )
   }
@@ -173,8 +177,8 @@ class FirstTab extends Component {
 
   render() {
     return (
-      <div>
-        <div className="writing">
+      <div className="location-writing-container">
+        <div className="writing-container">
           <h1>
             {this.props.lessonData.sectionOne.title}
           </h1>
@@ -188,8 +192,9 @@ class FirstTab extends Component {
             {this.props.lessonData.sectionTwo.text}
           </p>
         </div>
-        <div className="image">
-          {/* <img className='picture'></a> */}
+
+        <div className="image-container">
+          <img src="/img/NYTimesScreenshot.png" width="400" height="400"/>
         </div>
       </div>
     )

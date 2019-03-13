@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Redirect, NavLink} from 'react-router-dom';
+import { BrowserRouter, Route, Redirect, NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 import Header from './Header';
 import SignUpForm from './SignUpForm';
@@ -11,7 +11,7 @@ import firebase from 'firebase/app';
 import './App.scss';
 
 class App extends Component {
-  
+
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -21,26 +21,24 @@ class App extends Component {
   // }
 
   render() {
-    return(
+    return (
       <div>
-
-
         <BrowserRouter>
-        
-        <div className="App">
-          <main>
-          <Header></Header>
-            <Route path="/home-page" component={MainBody}/>
-            <Route path="/learning-page" component={LearningPage}/>
-            <Route path="/sign-in" component={LoginPage}/>
 
-            {/* <Redirect to="/home-page"/> */}
-          </main>
+          <div className="App">
+            <main>
+              <Header></Header>
+              <Route path="/home-page" component={MainBody} />
+              <Route path="/learning-page" component={LearningPage} />
+              <Route path="/sign-in" component={LoginPage} />
 
-          
-        </div>
+              {/* <Redirect to="/home-page"/> */}
+            </main>
+
+
+          </div>
         </BrowserRouter>
-          <Footer></Footer>
+        <Footer></Footer>
       </div>
     )
   }
