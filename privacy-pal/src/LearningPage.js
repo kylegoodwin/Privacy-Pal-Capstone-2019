@@ -25,14 +25,12 @@ class LearningPage extends Component {
     if (this.state.tabNum > 1) {
       this.setState({ tabNum: this.state.tabNum - 1 })
     }
-    console.log(this.state);
   };
 
   goForward = () => {
     if (this.state.tabNum < 3) {
       this.setState({ tabNum: this.state.tabNum + 1 })
     }
-    console.log(this.state);
   };
 
   render() {
@@ -132,7 +130,6 @@ class ProgressBar extends Component {
 
   render() {
 
-    console.log(this.props.currentTab);
     return (
       <div className="quiz-progress">
         <ul>
