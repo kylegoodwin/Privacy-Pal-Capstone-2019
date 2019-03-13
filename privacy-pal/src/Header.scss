@@ -5,25 +5,7 @@ $gray: #f5f6f7;
 $green: #90c46a;
 $red: #ce8585;
 
-*{box-sizing: border-box;}
-
-html{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.flex-container {
-    justify-content: space-between;
-    display: flex;
-}
-
-.footer{
-    //position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    
+.header{
     ul{
       list-style: none;
       margin: 0;
@@ -32,9 +14,27 @@ html{
       display: inline-block;
       vertical-align: middle;
       padding-left: 2em;
+      
       .logo{
         height: 4em;
       }
     }
-    background-color: darkgray;
-}
+  
+    a, p{
+      color: $maroon;
+      font-weight: bold;
+      text-decoration:  none;
+    }
+  
+    .selected{
+      color: $gold;
+    }
+  
+    p{
+      padding-top: .5em;
+      padding-right: 1em;
+    }
+  
+  
+  }
+  

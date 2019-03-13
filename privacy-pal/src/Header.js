@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Redirect, Link, NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import firebase from 'firebase/app'
-import { Button } from 'react-bootstrap';
+import './Header.scss';
 
 class Header extends Component {
-  
+
   // Signs the user out of firebase
   handleSignOut = () => {
     this.setState({ errorMessage: null });
@@ -15,8 +15,6 @@ class Header extends Component {
         this.setState({ errorMessage: err.message })
       })
   }
-  
-  
   render() {
     return (
       <div className="header flex-container">
@@ -25,7 +23,9 @@ class Header extends Component {
             <ul>
               <li>
                 {/* <Header></Header> */}
-                <img src="img/HeaderLogo.png" className="logo"></img>
+                <Link to="/home-page">
+                  <img src="img/HeaderLogo.png" className="logo"></img>
+                </Link>
               </li>
               <li className="nav-item">
                 <NavLink to="/home-page" className="nav-link" activeClassName="selected" >Home</NavLink>
@@ -42,12 +42,11 @@ class Header extends Component {
         <div className="flex-item">
           <NavLink to="/sign-in" className="nav-link">
             <button type="button" className="btn btn-outline-danger justify-content-center: super">Sign in</button>
-          </NavLink>    
+          </NavLink>
         </div>
       </div>
     );
   }
 }
-  
+
 export default Header;
-  
