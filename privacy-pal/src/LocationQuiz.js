@@ -29,11 +29,11 @@ class LocationQuiz extends Component {
     render() {
         return (
             <div className="quiz-set-container">
-                {(this.state.questionNum == 1) ? (<BeginQuiz nextQuestion={this.nextQuestion} />) : ""}
+                {(this.state.questionNum == 1) ? (<BeginQuiz toggleNextFunc={this.props.toggleNextFunc} nextQuestion={this.nextQuestion} />) : ""}
                 {(this.state.questionNum == 2) ? (<Q1 nextQuestion={this.nextQuestion} correctAnswer={this.answeredCorrectly} />) : ""}
                 {(this.state.questionNum == 3) ? (<Q2 nextQuestion={this.nextQuestion} correctAnswer={this.answeredCorrectly} />) : ""}
                 {(this.state.questionNum == 4) ? (<Q3 nextQuestion={this.nextQuestion} correctAnswer={this.answeredCorrectly} />) : ""}
-                {(this.state.questionNum == 5) ? (<Results numCorrect={this.state.numCorrect} />) : ""}
+                {(this.state.questionNum == 5) ? (<Results toggleNextFunc={this.props.toggleNextFunc} numCorrect={this.state.numCorrect} />) : ""}
             </div>
         );
     }
@@ -56,7 +56,7 @@ class BeginQuiz extends Component {
                         with them. It is up to you to choose which apps you should be sharing
                         your location with, and which ones to block from sharing your
                     </p>
-                    <button type="button" className="btn btn-outline-dark btn-lg" onClick={this.props.nextQuestion}>Let's Begin!</button>
+                    <button type="button" className="btn btn-outline-dark btn-lg" onClick={() => {this.props.nextQuestion(); this.props.toggleNextFunc()}}>Let's Begin!</button>
                 </div>
                
             </div>
@@ -84,7 +84,7 @@ class Q1 extends Component {
             this.setState({ displayText: "Sorry! Wrong Answer... This will keep you safe, but might be too restrictive" });
         }
 
-        this.setState({ hasSelected: 'true' })
+        this.setState({ hasSelected: true })
     }
 
     render() {
@@ -94,7 +94,7 @@ class Q1 extends Component {
                 <div className="screenshot-container">
                     <img src="/img/screenshot-1.jpg" />
                 </div>
-                <div className="reveal-container">
+
 
                     {!this.state.hasSelected ? (
                         <div className="text">
@@ -107,19 +107,20 @@ class Q1 extends Component {
                             </p>
                             <h2>Do you?</h2>
                             <div className="buttons-container">
-                                <br className="text-center " /> 
-                                    <Button id="one" variant="outline-primary" onClick={(event) => {this.showBox(event); this.props.correctAnswer()}}>Allow While Using App</Button>
-                                <br className="text-center" />
-                                    <Button id="two" variant="outline-primary" onClick={this.showBox}>Always Allow</Button> 
-                                <br className="text-center" />
-                                    <Button id="three" variant="outline-primary" onClick={this.showBox}>Don't Allow</Button> 
+                            
+                                    <Button id="one" className="button" variant="outline-primary" onClick={(event) => {this.showBox(event); this.props.correctAnswer()}}>Allow While Using App</Button>
+                    
+                                    <Button id="two" className="button" variant="outline-primary" onClick={this.showBox}>Always Allow</Button> 
+                       
+                                    <Button id="three" className="button" variant="outline-primary" onClick={this.showBox}>Don't Allow</Button> 
                             </div>
                         </div>
                     ) : (
-                        <div>
+                        
+                        <div className="reveal-container">
                             <h1> How did you do?</h1>
                             <p>{this.state.displayText}</p>
-                            <button id="next-question" className="next-arrow" onClick={this.props.nextQuestion}>
+                            <button id="next-question" className="btn btn-outline-dark" onClick={this.props.nextQuestion}>
                                 Next Question
                             </button>
                         </div>
@@ -127,7 +128,7 @@ class Q1 extends Component {
                         )
                     }
                 </div>
-            </div>
+
         )
     }
 }
@@ -163,10 +164,9 @@ class Q2 extends Component {
                 <div className="screenshot-container">
                     <img src="/img/screenshot-2.png" />
                 </div>
-                <div className="reveal-container">
 
                     {!this.state.hasSelected ? (
-                        <div className="text-center">
+                        <div className="text">
                             <h2>Please Select The Option to Share Your Location</h2>
                             <p>
                                 In this example, Waze, a driving navigation map, is asking you to give
@@ -174,24 +174,23 @@ class Q2 extends Component {
                             </p>
                             <h2>Do you?</h2>
                             <div className="buttons-container">
-                                <br className="text-center " /> 
-                                    <Button id="one" variant="outline-primary" onClick={this.showBox}>Allow</Button>
-                                <br className="text-center " /> 
-                                    <Button id="two" variant="outline-primary" onClick={(event) => {this.showBox(event); this.props.correctAnswer()}}>Don't Allow</Button>
+        
+                                    <Button id="one" className="button" variant="outline-primary" onClick={this.showBox}>Allow</Button>
+                        
+                                    <Button id="two" className="button" variant="outline-primary" onClick={(event) => {this.showBox(event); this.props.correctAnswer()}}>Don't Allow</Button>
                             </div>
                         </div>
                     ) : (
-                        <div>
+                        <div className="reveal-container">
                             <h1> How did you do?</h1>
                             <p>{this.state.displayText}</p>
-                            <button id="next-question" className="next-arrow" onClick={this.props.nextQuestion}>
+                            <button id="next-question" className="btn btn-outline-dark" onClick={this.props.nextQuestion}>
                                 Next Question
                             </button>
                         </div>
 
                         )
                     }
-                </div>
             </div>
         )
     }
@@ -222,9 +221,8 @@ class Q3 extends Component {
     render() {
         let mainImage;       
         if(this.state.hasSelected) {
-            mainImage = <div className="angry-birds-terms">
-                            <img src='/img/angry_birds_terms.png'/>
-                        </div>
+            mainImage = <img src='/img/angry_birds_terms.png'/>
+                        
         } else {
             mainImage = <div className="angry-birds-pic">
                             <img src='/img/angry_birds.png'/>
@@ -236,7 +234,6 @@ class Q3 extends Component {
                 <div className="screenshot-container">
                     {mainImage}
                 </div>
-                <div className="reveal-container">
                     {!this.state.hasSelected ? (
                         <div className="text">
                             <h2>Please Select The Option to Share Your Location</h2>
@@ -247,29 +244,29 @@ class Q3 extends Component {
                             </p>
                             <h2>Accept or View The Terms?</h2>
                             <div className="buttons-container">
-                                <br className="text-center " /> 
-                                    <Button id="one" variant="outline-primary" onClick={this.showBox}>Ok</Button>
-                                <br className="text-center" />
-                                    <Button id="two" variant="outline-primary" onClick={(event) => {this.showBox(event); this.props.correctAnswer()}}>Terms</Button>
+             
+                                    <Button id="one" className="button" variant="outline-primary" onClick={this.showBox}>Ok</Button>
+                            
+                                    <Button id="two" className="button" variant="outline-primary" onClick={(event) => {this.showBox(event); this.props.correctAnswer()}}>Terms</Button>
                             </div>
                         </div>
                     ) : (
-                        <div>
+                        <div className="reveal-container">
                             <h1> How did you do?</h1>
                             <p>{this.state.displayText}</p>
-                            <button id="next-question" className="next-arrow" onClick={this.props.nextQuestion}>
+                            <button id="next-question" className="btn btn-outline-dark" onClick={this.props.nextQuestion}>
                                 Next Question
                             </button>
                         </div>
                         )
                     }
                 </div>
-            </div>
         )
     }
 }
 
 class Results extends Component {
+
     constructor(props) {
         super(props);
 
@@ -280,8 +277,10 @@ class Results extends Component {
     }
 
     render() {
+        this.props.toggleNextFunc();
         return (
             <div className="results-container">
+                <h1>Results:</h1>
                 <p>
                     You got {this.props.numCorrect} right!
                 </p>

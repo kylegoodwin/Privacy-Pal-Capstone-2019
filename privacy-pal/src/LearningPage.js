@@ -15,9 +15,11 @@ class LearningPage extends Component {
     myMap.set("Passwords", false)
     myMap.set("Purchasing", true)
     myMap.set("Phishing", false)
+
     this.state = {
       tabNum: 1,
       titles: myMap,
+      showNext: false,
     }
   }
 
@@ -31,6 +33,13 @@ class LearningPage extends Component {
     if (this.state.tabNum < 3) {
       this.setState({ tabNum: this.state.tabNum + 1 })
     }
+  };
+
+  toggleNext = () => {
+    /*
+    this.setState({ showNext: !this.state.showNext })
+    console.log("made it 20 step")
+    */
   };
 
   render() {
@@ -54,7 +63,9 @@ class LearningPage extends Component {
         <Quiz lessonData={lesson}
           currentTab={this.state.tabNum}
           backButtonFunc={this.goBack}
-          forwardButtonFunc={this.goForward}>
+          forwardButtonFunc={this.goForward}
+          toggleNextFunc={this.toggleNext}
+          showNext={this.state.showNext}>
         </Quiz>
       </div>
     );
@@ -76,7 +87,7 @@ class SideBar extends Component {
 
       return (
         <li key={i}>
-          <div className="module-box">
+          <div className="module-box" id={"side" + i}>
             <div className="checkbox"></div>
             <p>{title}</p>
           </div>
@@ -111,8 +122,8 @@ class Quiz extends Component {
 
       <div className="quiz-container">
         <ProgressBar currentTab={this.props.currentTab}></ProgressBar>
-        <QuizContent currentTab={this.props.currentTab} lessonData={this.props.lessonData}></QuizContent>
-        <Buttons currentTab={this.props.currentTab} backButtonFunc={this.props.backButtonFunc} forwardButtonFunc={this.props.forwardButtonFunc}></Buttons>
+        <QuizContent toggleNextFunc={this.props.toggleNextFunc} currentTab={this.props.currentTab} lessonData={this.props.lessonData}></QuizContent>
+        <Buttons showNext={this.props.showNext} currentTab={this.props.currentTab} backButtonFunc={this.props.backButtonFunc} forwardButtonFunc={this.props.forwardButtonFunc}></Buttons>
       </div>
 
     );
@@ -151,6 +162,8 @@ class ProgressBar extends Component {
 
 class QuizContent extends Component {
 
+
+
   constructor(props) {
     super(props)
   }
@@ -160,7 +173,7 @@ class QuizContent extends Component {
       <div className="quiz-content">
         {(this.props.currentTab == 1) ? (<FirstTab lessonData={this.props.lessonData} />) : ""}
         {(this.props.currentTab == 2) ? (<SecondTab lessonData={this.props.lessonData} />) : ""}
-        {(this.props.currentTab == 3) ? (<ThirdTab lessonData={this.props.lessonData} />) : ""}
+        {(this.props.currentTab == 3) ? (<ThirdTab toggleNextFunc={this.props.toggleNextFunc} lessonData={this.props.lessonData} />) : ""}
       </div>
     )
   }
@@ -210,9 +223,14 @@ class SecondTab extends Component {
 }
 
 class ThirdTab extends Component {
+
+  constructor(props){
+    super(props)
+  }
+
   render() {
     return (
-      <LocationQuiz />
+      <LocationQuiz  toggleNextFunc={this.props.toggleNextFunc} />
     )
   }
 }
@@ -236,10 +254,13 @@ class Buttons extends Component {
         <button id="quiz-back" onClick={this.props.backButtonFunc}>
           Back
         </button>
-        <button id="quiz-forward" className={((this.props.currentTab == 3) ? 'goldbutton' : "")} onClick={this.props.forwardButtonFunc}>
+
+        <button disabled={this.props.showNext} id="quiz-forward" className={((this.props.currentTab == 3) ? 'goldbutton' : "")} onClick={this.props.forwardButtonFunc}>
           {nextText}
         </button>
+
       </div>
+      
     )
   }
 }
