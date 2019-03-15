@@ -10,7 +10,7 @@ class LearningPage extends Component {
     super(props);
 
     var myMap = new Map();
-    myMap.set("Location", true)
+    myMap.set("Data Sharing", true)
     myMap.set("Identity", true)
     myMap.set("Passwords", false)
     myMap.set("Purchasing", true)
@@ -148,7 +148,7 @@ class ProgressBar extends Component {
             <p>Why</p>
           </li>
           <li className={((this.props.currentTab >= 2) ? 'current-tab' : "")}>
-            <p>The Importance of Sharing Location</p>
+            <p>How to Manage your Data</p>
           </li>
           <li className={((this.props.currentTab >= 3) ? 'current-tab' : "")}>
             <p>Quiz</p>
@@ -214,9 +214,18 @@ class FirstTab extends Component {
 class SecondTab extends Component {
   render() {
     return (
-      <div>
-
-        <h1> COMING SOON!!!!!!!!</h1>
+      <div className="managing-data">
+        <h1>Steps to managing your data sharing</h1>
+        <div className="learning-container">
+          <div className="image-container">
+            <img src="/img/screenshot-location-sharing.png"/>
+          </div>
+          <div className="writing-container">
+            <p>
+              {this.props.lessonData.sectionOne.text}
+            </p>
+          </div>
+        </div>
       </div>
     )
   }

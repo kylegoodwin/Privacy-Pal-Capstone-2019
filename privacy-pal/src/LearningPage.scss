@@ -57,14 +57,27 @@ html{
     
   
     .location-writing-container{
-        display: flex;
+      display: flex;
+    }
+
+    .managing-data{
+      
+      h1{
+        text-align: center;
+        padding-bottom: 1em;
+      }
+    
+    }
+
+    .learning-container{
+      display: flex;
     }
 
     .writing-container{
       flex-basis: 60%;
       overflow-y: scroll;
       overflow-x: hidden;
-  
+      text-align: left;
       height: 70vh;
     }
 

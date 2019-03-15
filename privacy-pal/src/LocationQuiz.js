@@ -12,7 +12,7 @@ class LocationQuiz extends Component {
         this.nextQuestion = this.nextQuestion.bind(this);
 
         this.state = {
-            questionNum: 1,
+            questionNum: 0,
             numCorrect: 0
         }
     }
@@ -29,10 +29,20 @@ class LocationQuiz extends Component {
     render() {
         return (
             <div className="quiz-set-container">
-                {(this.state.questionNum == 1) ? (<BeginQuiz toggleNextFunc={this.props.toggleNextFunc} nextQuestion={this.nextQuestion} />) : ""}
-                {(this.state.questionNum == 2) ? (<Q1 nextQuestion={this.nextQuestion} correctAnswer={this.answeredCorrectly} />) : ""}
-                {(this.state.questionNum == 3) ? (<Q2 nextQuestion={this.nextQuestion} correctAnswer={this.answeredCorrectly} />) : ""}
-                {(this.state.questionNum == 4) ? (<Q3 nextQuestion={this.nextQuestion} correctAnswer={this.answeredCorrectly} />) : ""}
+                {(this.state.questionNum == 0) ? (<BeginQuiz toggleNextFunc={this.props.toggleNextFunc}                                                   nextQuestion={this.nextQuestion} 
+                                                             currentQuestion={this.state.questionNum} />) : ""}
+                {(this.state.questionNum == 1) ? (<Q1 nextQuestion={this.nextQuestion} 
+                                                      correctAnswer={this.answeredCorrectly} 
+                                                      currentQuestion={this.state.questionNum} />) : ""}
+                {(this.state.questionNum == 2) ? (<Q2 nextQuestion={this.nextQuestion} 
+                                                      correctAnswer={this.answeredCorrectly} 
+                                                      currentQuestion={this.state.questionNum }/>) : ""}
+                {(this.state.questionNum == 3) ? (<Q3 nextQuestion={this.nextQuestion} 
+                                                      correctAnswer={this.answeredCorrectly}
+                                                      currentQuestion={this.state.questionNum } />) : ""}
+                {(this.state.questionNum == 4) ? (<Q4 nextQuestion={this.nextQuestion} 
+                                                      correctAnswer={this.answeredCorrectly} 
+                                                      currentQuestion={this.state.questionNum }/>) : ""}
                 {(this.state.questionNum == 5) ? (<Results toggleNextFunc={this.props.toggleNextFunc} numCorrect={this.state.numCorrect} />) : ""}
             </div>
         );
@@ -98,6 +108,9 @@ class Q1 extends Component {
 
                     {!this.state.hasSelected ? (
                         <div className="text">
+                            <div className="progress-counter'">
+                                <p>Progress: {this.props.currentQuestion} of 4</p>
+                            </div>
                             <h2>Please Select The Option to Share Your Location</h2>
                             <p>
                                 This is an example screenshot of how a phone application will ask for your location.
@@ -167,6 +180,9 @@ class Q2 extends Component {
 
                     {!this.state.hasSelected ? (
                         <div className="text">
+                            <div className="progress-counter'">
+                                <p>Progress: {this.props.currentQuestion} of 4</p>
+                            </div>
                             <h2>Please Select The Option to Share Your Location</h2>
                             <p>
                                 In this example, Waze, a driving navigation map, is asking you to give
@@ -236,11 +252,12 @@ class Q3 extends Component {
                 </div>
                     {!this.state.hasSelected ? (
                         <div className="text">
+                            <div className="progress-counter'">
+                                <p>Progress: {this.props.currentQuestion} of 4</p>
+                            </div>
                             <h2>Please Select The Option to Share Your Location</h2>
                             <p>
-                                This is an example of choice that you experience often with games. Notice how in this instance instead of 
-                                individually accepting different terms all your data rights are lumped together. What's the best 
-                                choice?
+                                This is an example of choice that you experience often with games. Notice how in this instance instead of individually accepting different terms all your data rights are lumped together. What's the best choice?
                             </p>
                             <h2>Accept or View The Terms?</h2>
                             <div className="buttons-container">
@@ -261,6 +278,70 @@ class Q3 extends Component {
                         )
                     }
                 </div>
+        )
+    }
+}
+
+class Q4 extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            displayText: "",
+            hasSelected: false,
+        }
+    }
+    
+
+    showBox = (event) => {
+
+        if (event.target.id == "one") {
+            this.setState({ displayText: "This question has no official answer. Facebook Messenger is asking to share your phone contacts for the use of its app. The benefit to doing this is you can be able to easily message your friends. But the downside is that extra data could be pulled out -- such as storing phone logs, an incident that has happened in the past. "});
+        } else {
+            this.setState({ displayText: "This question has no official answer. Facebook Messenger is asking to share your phone contacts for the use of its app. The benefit to doing this is you can be able to easily message your friends. But the downside is that extra data could be pulled out -- such as storing phone logs, an incident that has happened in the past. " });
+        }
+
+        this.setState({ hasSelected: 'true' })
+
+    }
+
+
+    render() {
+
+        return (
+            <div className="location-quiz-container">
+                <div className="screenshot-container">
+                    <img src="/img/screenshot-4.png" />
+                </div>
+
+                    {!this.state.hasSelected ? (
+                        <div className="text">
+                            <div className="progress-counter'">
+                                <p>Progress: {this.props.currentQuestion} of 4</p>
+                            </div>
+                            <h2>Please Select The Option to Share Your Location</h2>
+                            <p>
+                                This is Facebook Messenger. They are requesting access to your phone contacts. Which option would you pick?
+                            </p>
+                            <h2>Do you?</h2>
+                            <div className="buttons-container">
+                                    <Button id="one" className="button" variant="outline-primary" onClick={(event) => {this.showBox(event); this.props.correctAnswer()}}>Turn On Contacts</Button>
+                        
+                                    <Button id="two" className="button" variant="outline-primary" onClick={(event) => {this.showBox(event); this.props.correctAnswer()}}>Not Now</Button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="reveal-container">
+                            <h1> How did you do?</h1>
+                            <p>{this.state.displayText}</p>
+                            <button id="next-question" className="btn btn-outline-dark" onClick={this.props.nextQuestion}>
+                                Next Question
+                            </button>
+                        </div>
+
+                        )
+                    }
+            </div>
         )
     }
 }
