@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import './.scss/SignUpForm.scss';
 
 class SignUpForm extends Component {
     constructor(props) {
@@ -33,48 +34,66 @@ class SignUpForm extends Component {
 
     render() {
         return(
-            <div className="login-register-page">
-                <Row>
-                    <Col>
-                        <div>
-                            <img src="img/HeaderLogo.png" className="logo"></img>
+            <div className="register-page">
+                <img src="img/HeaderLogo.png" style={{"margin": "auto", "display" : "block"}} className="sign-up-logo"></img>
+                <div className="container sign-up-form">
+                    <div>
+                        <h2 className="register-h2">Sign Up OnLy!</h2>
+                    </div>
+                    <form>
+                        {/* First Name */}
+                        <div className="form-group first-name">
+                            <label htmlFor="first-name">First Name</label>
+                            <input className="form-control"
+                                id="first-name"
+                                type="first-name"
+                                name="first-name"
+                                onChange={this.handleChange}
+                            />
                         </div>
-                        <div className="container sign-in-register">
-                            <div>
-                                <h2 className="sign-in-register-h2">Sign Up or Sign In</h2>
-                            </div>
-                            <form>
-                                {/* Email */}
-                                <div className="form-group email">
-                                    <label htmlFor="email">Email</label>
-                                    <input className="form-control"
-                                       id="email"
-                                       type="email"
-                                       name="email"
-                                       onChange={this.handleChange}
-                                    />
-                                </div>
-
-                                {/* Password */}
-                                <div className="form-group password">
-                                    <label htmlFor="password">Password</label>
-                                    <input className="form-control"
-                                       id="password"
-                                       type="password"
-                                       name="password"
-                                       onChange={this.handleChange}
-                                    />
-                                </div>
-
-                                {/* Buttons */}
-                                <div className="form-group">
-                                    <button className="btn btn-primary sign-up-button" onClick={this.handleSignUp}>Sign Up</button>
-                                    <button className="btn btn-primary sign-in-button" onClick={this.handleSignIn}>Sign In</button>
-                                </div>
-                            </form>
+                    
+                        {/* Last Name */}
+                        <div className="form-group last-name">
+                            <label htmlFor="last-name">Last Name</label>
+                            <input className="form-control"
+                                id="last-name"
+                                type="last-name"
+                                name="last-name"
+                                onChange={this.handleChange}
+                            />
                         </div>
-                    </Col>
-                </Row>
+
+                        {/* Email */}
+                        <div className="form-group email">
+                            <label htmlFor="email">Email</label>
+                            <input className="form-control"
+                                id="email"
+                                type="email"
+                                name="email"
+                                onChange={this.handleChange}
+                            />
+                        </div>
+
+                        {/* Password */}
+                        <div className="form-group password">
+                            <label htmlFor="password">Password</label>
+                            <input className="form-control"
+                                id="password"
+                                type="password"
+                                name="password"
+                                onChange={this.handleChange}
+                            />
+                        </div>
+
+                        {/* Buttons */}
+                        <div className="form-group">
+                            <button className="btn btn-primary sign-up-button" onClick={this.handleSignUp}>Sign Up</button>
+                            <NavLink to="/sign-in" className="nav-link">
+                                <button className="btn btn-outline-info">Or Sign In</button>
+                            </NavLink>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }

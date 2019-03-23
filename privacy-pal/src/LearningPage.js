@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Form from './Form';
-import './LearningPage.scss';
+import './.scss/LearningPage.scss';
 import LocationQuiz from './LocationQuiz';
 
 class LearningPage extends Component {

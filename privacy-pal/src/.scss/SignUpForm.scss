@@ -1,0 +1,37 @@
+// Sign-Up Page
+.sign-up-logo{
+    block-size: 300px;
+    margin-top: 2em;
+}
+
+.sign-up-form{
+    justify-content: center;
+    align-items: center;
+
+    .first-name{
+        margin: 1em 0 .5em 0;
+    }
+      
+    .last-name{
+        margin: .5em 0 .5em 0;
+    }
+
+    .email{
+        margin-bottom: 1em;
+    }
+      
+    .password{
+        margin-top: 1em;
+    }
+    
+    .sign-up-button{
+        margin-bottom: .5em;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: .5em;
+    }
+}
+

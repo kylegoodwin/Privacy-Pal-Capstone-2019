@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link, NavLink } from 'react-router-dom';
 import firebase from 'firebase/app'
-import './Header.scss';
+import './.scss/Header.scss';
 
 class Header extends Component {
 
@@ -15,6 +15,7 @@ class Header extends Component {
         this.setState({ errorMessage: err.message })
       })
   }
+  
   render() {
     return (
       <div className="navbar-wrapper">
@@ -23,7 +24,6 @@ class Header extends Component {
           <div className="navLinks">
             <ul>
               <li>
-                {/* <Header></Header> */}
                 <Link to="/home-page">
                   <img src="img/HeaderLogo.png" className="logo"></img>
                 </Link>

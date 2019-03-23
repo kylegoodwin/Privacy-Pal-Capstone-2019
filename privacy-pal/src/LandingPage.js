@@ -3,19 +3,21 @@ import ReactDOM from 'react-dom';
 import Header from './Header'
 import firebase from 'firebase/app'
 import { NavLink } from 'react-router-dom';
-import './LandingPage.scss';
+import './.scss/LandingPage.scss';
+import Slider from './ModulesDisplay';
 
-class MainBody extends Component {
+class LandingPage extends Component {
   render() {
     return (
       <div>
+        {/* PRIVACY EDUCATION PLATFORM SECTION */}
         <div className="row d-flex align-items-center text-left">
           <div className="col-sm-4">
             <div className="card border-0">
               <div className="card-body">
                 <h1 className="card-title">Privacy Education Platform</h1>
-                <NavLink to="/sign-in" className="nav-link">
-                  <button type="button" className="btn btn-outline-danger justify-content-center: super">Protect Your Privacy Now</button>
+                <NavLink to="/sign-up" className="nav-link">
+                  <button type="button" className="btn btn-outline-warning justify-content-center: super">Protect Your Privacy Now - Sign Up</button>
                 </NavLink>
               </div>
             </div>
@@ -28,6 +30,7 @@ class MainBody extends Component {
             </div>
           </div>
         </div>
+      {/* EDUCATING THE NEXT GENERATION SECTION */}
       <section className="icons" align="center"> 
         <h2 id="icons-heading"> Educating The Next Generation: </h2>
         <ul className="iconCaptions">
@@ -50,9 +53,8 @@ class MainBody extends Component {
             </div>
           </li>
         </ul>
-        {/* Icon Source */}
-        {/* <div>Icons made by <a href="https://www.flaticon.com/authors/trinh-ho" title="Trinh Ho">Trinh Ho</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */}
-      </section>
+     </section>
+     {/* PARALLAX PICTURE SECTION*/}
       <div id="bigImage">
         <div className="text-center">
         <h2 id="who-we-are">Our Mission</h2>
@@ -61,18 +63,21 @@ class MainBody extends Component {
         <p className="image-text">Inspire</p>
         </div>
       </div>
-      <section className="modulesDisplay">
+      {/* MODULES SECTION */}
+      <section className="modules-display">
         <h1 align="center"> Modules taught: </h1>
-        <img src="img/screenshot.png"></img>
-        {/* <div className="screenshot"></div> */}
+        <Slider />
       </section>
+      {/* SIGN UP SECTION */}
       <section className="signUp" align="center">
         <h1> Sign Up Now To Protect Your Online Identity </h1>
-        <button>Sign Up</button>
+        <NavLink to="/sign-up" className="nav-link">
+          <button className="btn btn-outline-warning justify-content-center: super">Sign Up Now</button>
+        </NavLink>
       </section>
       </div>
     );
   }
 }
 
-export default MainBody;
+export default LandingPage;

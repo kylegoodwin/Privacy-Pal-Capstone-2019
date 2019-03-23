@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './LocationQuiz.scss';
+import './.scss/LocationQuiz.scss';
 import { Button } from 'react-bootstrap';
 
 class LocationQuiz extends Component {
