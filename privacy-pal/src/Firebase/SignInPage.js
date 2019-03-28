@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import './.scss/SignInForm.scss';
 
+import FirebaseContext, {withFirebase} from './FirebaseIndex';
+import firebase from 'firebase/app';
+
+import './SignInForm.scss';
+
+
+const SignInPage = () => (
+    <div>
+        <SignInForm />
+    </div>
+)
+
+// class SignInFormBase extends Component {
 class SignInForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            'email' : undefined,
-            'password' : undefined
+            email : '',
+            password : ''
         };
     }
 
@@ -20,44 +32,62 @@ class SignInForm extends Component {
         this.setState(changes);     // Update state
     }
 
-    // Handles signing in from App.js
+    // handleSignIn = (email, password) =>
+    // this.auth.signInWithEmailAndPassword(email, password);
+
+    // // Handles signing in from App.js
     handleSignIn = (event) => {
+        const { email, password } = this.state;
+
+        this.setState({ errorMessage: null });
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+            this.setState({email: '', password: ''})
+        })
+        .catch((err) => {
+            this.setState({ errorMessage: err.nessage })
+        })
+
         event.preventDefault();
-        this.props.signInCallback(this.state.email, this.state.password);
     }
 
     render() {
+        const { email, password } = this.state;
+
+        const isInvalid = password === '' || email === '';
+
         return(
             <div className="login-page">
                 <img src="img/HeaderLogo.png" style={{"margin": "auto", "display" : "block"}} className="sign-in-logo"></img>
                 <div className="container sign-in-form">
                     <h2 className="sign-in-h2">Please Sign In</h2>
-                    <form>
+                    <form onSubmit={this.handleSignIn}>
                         {/* Email */}
                         <div className="form-group email">
-                            <label htmlFor="email">Email</label>
                             <input className="form-control"
                                 id="email"
-                                type="email"
+                                type="text"
                                 name="email"
                                 onChange={this.handleChange}
+                                placeholder="Email Address"
                             />
                         </div>
 
                         {/* Password */}
                         <div className="form-group password">
-                            <label htmlFor="password">Password</label>
                             <input className="form-control"
                                 id="password"
                                 type="password"
                                 name="password"
                                 onChange={this.handleChange}
+                                placeholder="Password"
                             />
                         </div>
 
                         {/* Buttons */}
                         <div className="form-group">
-                            <button className="btn btn-primary sign-in-button" onClick={this.handleSignIn}>Sign In</button>
+                            <button className="btn btn-primary sign-in-button" disabled={isInvalid} type="submit">Sign In</button>
                             <NavLink to="/sign-up" className="nav-link">
                                 <button className="btn btn-outline-info sign-up-option">Or Sign Up</button>
                             </NavLink>
@@ -69,4 +99,8 @@ class SignInForm extends Component {
     }
 }
 
-export default SignInForm
+// const SignInForm = withFirebase(SignInFormBase);
+
+export default SignInPage;
+
+export { SignInForm }

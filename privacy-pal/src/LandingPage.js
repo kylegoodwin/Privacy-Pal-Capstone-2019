@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header'
-import firebase from 'firebase/app'
 import { NavLink } from 'react-router-dom';
-import './.scss/LandingPage.scss';
+
+import Header from './Header'
 import Slider from './ModulesDisplay';
+
+import firebase from 'firebase/app'
+
+import './.scss/LandingPage.scss';
+
 
 class LandingPage extends Component {
   render() {
