@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import FirebaseContext, {withFirebase} from './FirebaseIndex';
+import FirebaseContext, { withFirebase } from './FirebaseIndex';
 import firebase from 'firebase/app';
 
 import './SignUpForm.scss';
@@ -26,9 +26,10 @@ class SignUpForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username : '',
-            email : '',
-            password : ''
+            username: '',
+            email: '',
+            password: '',
+            signIn: false
         };
     }
 
@@ -41,6 +42,28 @@ class SignUpForm extends Component {
         this.setState(changes);     // Update state
     }
 
+    handleSignIn = (event) => {
+        const { email, password } = this.state;
+
+        this.setState({ errorMessage: null });
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then(() => {
+                this.setState({ email: '', password: '' })
+            })
+            .catch((err) => {
+                this.setState({ errorMessage: err.nessage })
+            })
+
+        event.preventDefault();
+    }
+
+    switchToSignIn = () => {
+        console.log("HERE");
+        this.setState({ signIn: true })
+    }
+
+
     handleSignUp = (event) => {
         const { username, email, password } = this.state;
 
@@ -50,16 +73,16 @@ class SignUpForm extends Component {
             .then((userCredential) => {
                 let firebaseUser = userCredential.user;
 
-                if(firebaseUser) {
+                if (firebaseUser) {
                     firebaseUser.updateProfile({
                         displayName: username
                     })
-                }   
+                }
 
                 // Sets the inputs back to empty after user has signed up
                 this.setState({
                     username: '',
-                    email : '',
+                    email: '',
                     password: ''
                 })
             })
@@ -69,7 +92,7 @@ class SignUpForm extends Component {
                 this.setState({ errorMessage: err.message });
             })
 
-        event.preventDefault();    
+        event.preventDefault();
     }
 
 
@@ -85,14 +108,25 @@ class SignUpForm extends Component {
             this.state.username === '' ||
             this.state.email === '' ||
             this.state.password === '';
-        
-        return(
+
+        return (
             <div className="register-page">
+                {/*
                 <img src="img/HeaderLogo.png" style={{"margin": "auto", "display" : "block"}} className="sign-up-logo"></img>
+                */}
                 <div className="container sign-up-form">
-                    <div>
-                        <h2 className="register-h2">Sign Up OnLy!</h2>
-                    </div>
+                    {!this.state.signIn &&
+                        <div>
+                            <h2 className="register-h2">Create an account</h2>
+                            <p> Already have an account?  <button onClick={this.switchToSignIn} className="btn-sm btn-secondary sign-up-button">Sign In</button></p>
+                        </div>
+                    }
+                    {this.state.signIn &&
+                        <div>
+                            <h2 className="register-h2">Sign In</h2>
+                        </div>
+                    }
+
                     <form onSubmit={this.handleSignUp}>
                         {/* Usename */}
                         <div className="form-group username">
@@ -107,6 +141,7 @@ class SignUpForm extends Component {
                         </div>
 
                         {/* Email */}
+                        {!this.state.signIn &&
                         <div className="form-group email">
                             {/* <label htmlFor="email">Email</label> */}
                             <input className="form-control"
@@ -117,6 +152,7 @@ class SignUpForm extends Component {
                                 placeholder="Email Address"
                             />
                         </div>
+                        }
 
                         {/* Password */}
                         <div className="form-group password">
@@ -131,11 +167,9 @@ class SignUpForm extends Component {
                         </div>
 
                         {/* Buttons */}
+                        
                         <div className="form-group">
-                            <button className="btn btn-primary sign-up-button" disabled={isInvalid} type="submit">Sign Up</button>
-                            <NavLink to="/sign-in" className="nav-link">
-                                <button className="btn btn-outline-info">Or Sign In</button>
-                            </NavLink>
+                            <button className="btn btn-primary sign-up-button" disabled={isInvalid} type="submit">Start Learning</button>
                         </div>
                     </form>
                 </div>

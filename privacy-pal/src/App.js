@@ -52,7 +52,7 @@ class App extends Component {
 
           </div>
         </BrowserRouter>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     )
   }

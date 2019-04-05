@@ -59,7 +59,9 @@ class SignInForm extends Component {
 
         return(
             <div className="login-page">
+                {/*
                 <img src="img/HeaderLogo.png" style={{"margin": "auto", "display" : "block"}} className="sign-in-logo"></img>
+                */}
                 <div className="container sign-in-form">
                     <h2 className="sign-in-h2">Please Sign In</h2>
                     <form onSubmit={this.handleSignIn}>

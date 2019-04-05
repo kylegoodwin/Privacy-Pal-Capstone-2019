@@ -5,8 +5,15 @@
 }
 
 .sign-in-form{
+    margin-top: 10%;
     justify-content: center;
     align-items: center;
+
+    width: 40%;
+
+    input{
+        width: 80%;
+    }
 
     .email{
         margin-bottom: 1em;
