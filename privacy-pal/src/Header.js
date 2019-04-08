@@ -85,8 +85,8 @@ class HeaderSignedOut extends Component {
           </div>
         </div>
         <div className="flex-item">
-          <NavLink to="/sign-in" className="nav-link">
-            <button type="button" className="btn btn-outline-danger sign-in-button">Sign in</button>
+          <NavLink to="/sign-up" className="nav-link">
+            <button type="button" className="btn btn-outline-danger sign-in-button">Sign In</button>
           </NavLink>
         </div>
       </div>

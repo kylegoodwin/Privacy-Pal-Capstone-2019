@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 import Navigation from './Header';
-import SignInPage from './Firebase/SignInPage';
 import SignUpPage from './Firebase/SignUpPage';
 import LandingPage from './LandingPage';
 import LearningPage from './LearningPage';
@@ -44,7 +43,6 @@ class App extends Component {
 
               <Route path="/home-page" component={LandingPage} />
               <Route path="/learning-page" component={LearningPage} />
-              <Route path="/sign-in" component={SignInPage} />
               <Route path="/sign-up" component={SignUpPage} />
 
               {/* <Redirect to="/home-page"/> */}
