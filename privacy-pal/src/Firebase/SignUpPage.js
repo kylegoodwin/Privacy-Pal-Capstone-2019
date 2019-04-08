@@ -43,6 +43,8 @@ class SignUpForm extends Component {
     }
 
     handleSignIn = (event) => {
+        
+        console.log("HERE Now");
         const { email, password } = this.state;
 
         this.setState({ errorMessage: null });
@@ -55,16 +57,29 @@ class SignUpForm extends Component {
                 this.setState({ errorMessage: err.nessage })
             })
 
-        event.preventDefault();
     }
 
     switchToSignIn = () => {
-        console.log("HERE");
+
         this.setState({ signIn: true })
+
+    }
+
+    switchSignUp = (event) => {
+
+        //event.preventDefault();
+
+        if (this.state.signIn) {
+            this.handleSignIn()
+        } else {
+            this.handleSignUp()
+        }
+
     }
 
 
     handleSignUp = (event) => {
+        //event.preventDefault();
         const { username, email, password } = this.state;
 
         this.setState({ errorMessage: null });   // Clears any old errors
@@ -92,22 +107,15 @@ class SignUpForm extends Component {
                 this.setState({ errorMessage: err.message });
             })
 
-        event.preventDefault();
+        
     }
 
 
     render() {
 
-        // const {
-        //     username,
-        //     email,
-        //     password
-        // } = this.state;
+        const signInNotValid = (this.state.email === '' || this.state.password === '');
 
-        const isInvalid =
-            this.state.username === '' ||
-            this.state.email === '' ||
-            this.state.password === '';
+        const signUpNotValid = (signInNotValid || this.state.username === '');
 
         return (
             <div className="register-page">
@@ -118,30 +126,41 @@ class SignUpForm extends Component {
                     {!this.state.signIn &&
                         <div>
                             <h2 className="register-h2">Create an account</h2>
+                            <p> Using an account will let you access the learning modules and track your privacy learning progress.
+                        We take your data privacy seriously and dont share your information with third parties.
+                    </p>
                             <p> Already have an account?  <button onClick={this.switchToSignIn} className="btn-sm btn-secondary sign-up-button">Sign In</button></p>
                         </div>
                     }
                     {this.state.signIn &&
                         <div>
                             <h2 className="register-h2">Sign In</h2>
+                            <p> Using an account will let you access the learning modules and track your privacy learning progress.
+                        We take your data privacy seriously and dont share your information with third parties.
+                    </p>
                         </div>
                     }
 
-                    <form onSubmit={this.handleSignUp}>
+
+
+
+                    <form >
                         {/* Usename */}
-                        <div className="form-group username">
-                            {/* <label htmlFor="username">Username</label> */}
-                            <input className="form-control"
-                                id="username"
-                                type="text"
-                                name="username"
-                                onChange={this.handleChange}
-                                placeholder="Username"
-                            />
-                        </div>
+                        {!this.state.signIn &&
+                            <div className="form-group username">
+                                {/* <label htmlFor="username">Username</label> */}
+                                <input className="form-control"
+                                    id="username"
+                                    type="text"
+                                    name="username"
+                                    onChange={this.handleChange}
+                                    placeholder="Username"
+                                />
+                            </div>
+                        }
 
                         {/* Email */}
-                        {!this.state.signIn &&
+
                         <div className="form-group email">
                             {/* <label htmlFor="email">Email</label> */}
                             <input className="form-control"
@@ -152,7 +171,7 @@ class SignUpForm extends Component {
                                 placeholder="Email Address"
                             />
                         </div>
-                        }
+
 
                         {/* Password */}
                         <div className="form-group password">
@@ -167,9 +186,9 @@ class SignUpForm extends Component {
                         </div>
 
                         {/* Buttons */}
-                        
+
                         <div className="form-group">
-                            <button className="btn btn-primary sign-up-button" disabled={isInvalid} type="submit">Start Learning</button>
+                            <button className="btn btn-primary sign-up-button" disabled={this.state.signIn ? signInNotValid : signUpNotValid} type="button" onClick={this.switchSignUp}>Start Learning</button>
                         </div>
                     </form>
                 </div>
