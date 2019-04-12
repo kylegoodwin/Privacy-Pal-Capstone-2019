@@ -1,0 +1,54 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cards-container{
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card{
+  display: flex;
+  width: 45%;
+  height: 200px;
+  margin: 4px;
+  border-radius: 25px;
+  background-size: cover;
+  
+}
+
+h2{
+  color: white;
+  margin: .5em;
+}
+
+.cards-container::after{
+  content: "";
+  flex: auto;
+  margin-left: 100px;
+}
+
+.toolbar{
+  height: 75px;
+}
+
+.triangle{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100vh 0 0 100%;
+    border-color: transparent transparent transparent #6980fe;
+    z-index: -1;
+
+}
+
+.toolbar{
+  font-size: 50px;
+  text-align: right;
+  margin-right: .5em;
+}
