@@ -16,7 +16,7 @@ body{
   margin: 4px;
   border-radius: 25px;
   background-size: cover;
-  
+  border: none;
 }
 
 h2{
