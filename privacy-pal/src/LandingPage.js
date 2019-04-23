@@ -15,13 +15,13 @@ class LandingPage extends Component {
     return (
       <div>
         {/* PRIVACY EDUCATION PLATFORM SECTION */}
-        <div className="row d-flex align-items-center text-left">
+        <div className="row d-flex align-items-center text-left sweg">
           <div className="col-sm-4">
             <div className="card border-0">
               <div className="card-body">
-                <h1 className="card-title">Privacy Education Platform</h1>
+                <h1 className="card-title text-light display-4">Privacy Education Platform</h1>
                 <NavLink to="/sign-up" className="nav-link">
-                  <button type="button" className="btn btn-outline-warning justify-content-center: super">Protect Your Privacy Now - Sign Up</button>
+                  {/* <button type="button" className="btn btn-outline-warning justify-content-center: super">Protect Your Privacy Now - Sign Up</button> */}
                 </NavLink>
               </div>
             </div>
@@ -35,33 +35,35 @@ class LandingPage extends Component {
           </div>
         </div>
       {/* EDUCATING THE NEXT GENERATION SECTION */}
-      <section className="icons" align="center"> 
-        <h2 id="icons-heading"> Educating The Next Generation: </h2>
-        <ul className="iconCaptions">
-          <li>
-            <img src="img/capstoneBook.svg"></img>
-            <div>
-              <p className="icon-caption">How your personal information is created and recorded</p>
+      <div>
+        <h1 className="pt-5" id="icons-heading"> Learning Module Topics: </h1>
+      </div>
+      <div className = "row">
+        {/* <section className="icons" align="center">  */}
+            <div className="column">
+              <img className="screen-shots pl-5" src="img/posting-moderation.png"></img>
+              <div>
+                <p className="icon-caption text-center font-weight-bold">Posting in Moderation</p>
+              </div>
             </div>
-          </li>
-          <li>
-            <img src="img/capstoneCookie.svg"></img>
-            <div>
-              <p className="icon-caption">The importance of cookie tracking, and the information they can hold</p>
+            <div id="2" className="column">
+              <img className="screen-shots" src="img/online-networking.png"></img>
+              <div>
+                <p className="icon-caption text-center pr-5 font-weight-bold">Online Friends And Your Network</p>
+              </div>
             </div>
-          </li>
-          <li>
-            <img src="img/capstoneCert.svg"></img>
-            <div>
-              <p className="icon-caption">The laws and documentation that go into online privacy</p>
+            <div id="3" className="column">
+              <img className="screen-shots pr-4" src="img/economics.png"></img>
+              <div>
+                <p className="icon-caption text-center pr-5 font-weight-bold">Economics of Social Media Platforms</p>
+              </div>
             </div>
-          </li>
-        </ul>
-     </section>
+      {/* </section> */}
+     </div>
      {/* PARALLAX PICTURE SECTION*/}
       <div id="bigImage">
         <div className="text-center">
-        <h2 id="who-we-are">Our Mission</h2>
+        <h1 id="who-we-are">Our Mission</h1>
         <p className="image-text">Teach</p>
         <p className="image-text">Protect</p>
         <p className="image-text">Inspire</p>
@@ -69,16 +71,20 @@ class LandingPage extends Component {
       </div>
       {/* MODULES SECTION */}
       <section className="modules-display">
-        <h1 align="center"> Modules taught: </h1>
-        <Slider />
+        <h1 className="ml-5 text-light"> About the Project </h1>
+        <div className="ml-5 mr-5 text-light">Privacy Pal is a Capstone project through the University of Washington's Informatics program. The team consists of Kyle Goodwin, Lucas Woo,
+          Ryan Peart, and Sam Yoshikawa. Privacy Pal's goal is to inform and educate the next generation on user data, internet privacy, and how to be more 
+          cognizant about their online presence. Our online app is designed for use on smart phones and combines the designs of popular apps in the younger 
+          age groups with educational content and quizzes. We hope to break through to the Middle Schoolers and support them through their digital adventures. 
+        </div>
       </section>
       {/* SIGN UP SECTION */}
-      <section className="signUp" align="center">
+      {/* <section className="signUp" align="center">
         <h1> Sign Up Now To Protect Your Online Identity </h1>
         <NavLink to="/sign-up" className="nav-link">
           <button className="btn btn-outline-warning justify-content-center: super">Sign Up Now</button>
         </NavLink>
-      </section>
+      </section> */}
       </div>
     );
   }

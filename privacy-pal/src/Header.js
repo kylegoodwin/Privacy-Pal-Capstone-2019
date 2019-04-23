@@ -27,38 +27,41 @@ class HeaderSignedIn extends Component {
 
   render() {
     return (
-      <div className="navbar-wrapper">
-      <div className="header flex-container">
-        <div className="flex-item">
-          <div className="navLinks">
-            <ul>
-              <li>
-                <Link to="/home-page">
-                  <img src="img/HeaderLogo.png" className="logo"></img>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/home-page" className="nav-link" activeClassName="selected">Home</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/learning-page" className="nav-link" activeClassName="selected">Learn</NavLink>
-              </li>
-              <li className="nav-item">
-                <p className="header-greeting">Hello, {this.props.user.displayName}!</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="flex-item">
-          <button type="button" className="btn btn-outline-danger sign-out-button" onClick={this.handleSignOut}>
-            Sign Out
-          </button>
-        </div>
-      </div>
-      </div>
+      <img src="img/HeaderLogo.png" className="logo"></img>
     );
   }
 }
+      // <div className="navbar-wrapper">
+      // <div className="header flex-container">
+        {/* <div className="flex-item"> */}
+          {/* <div className="navLinks">
+            <ul>
+              <li> */}
+                {/* <Link to="/home-page"> */}
+                {/* </Link> */}
+              {/* </li> */}
+              {/* <li className="nav-item"> */}
+                {/* <NavLink to="/home-page" className="nav-link" activeClassName="selected">Home</NavLink> */}
+              {/* </li> */}
+              {/* <li className="nav-item"> */}
+                {/* <NavLink to="/learning-page" className="nav-link" activeClassName="selected">Learn</NavLink> */}
+              {/* </li> */}
+              {/* <li className="nav-item"> */}
+                {/* <p className="header-greeting">Hello, {this.props.user.displayName}!</p> */}
+              {/* </li> */}
+            {/* </ul>
+          </div>
+        </div> */}
+        {/* <div className="flex-item"> */}
+          {/* <button type="button" className="btn btn-outline-danger sign-out-button" onClick={this.handleSignOut}> */}
+            {/* Sign Out */}
+          {/* </button> */}
+        {/* </div> */}
+      // </div>
+      // </div>
+//     );
+//   }
+// }
 
 class HeaderSignedOut extends Component {
 

@@ -41,9 +41,9 @@ class App extends Component {
             <main>
               <Navigation user={this.state.user}></Navigation>
 
-              <Route path="/home-page" component={LandingPage} />
-              <Route path="/learning-page" component={LearningPage} />
-              <Route path="/sign-up" component={SignUpPage} />
+              <Route path="/" component={LandingPage} />
+              {/* <Route path="/learning-page" component={LearningPage} />
+              <Route path="/sign-up" component={SignUpPage} /> */}
 
               {/* <Redirect to="/home-page"/> */}
             </main>

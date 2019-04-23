@@ -15,10 +15,6 @@ $red: #ce8585;
 
   li{
     vertical-align: middle;
-    
-    .logo{
-      height: 4em;
-    }
 
     a, p{
       color: $maroon;
@@ -30,7 +26,7 @@ $red: #ce8585;
 
     .header-greeting{
       margin-top: .5em;
-      margin-left: 11em;
+      // margin-left: 11em;
     }
   }
 
@@ -52,4 +48,17 @@ $red: #ce8585;
   background-color: white;
   z-index: 500;
 }
-  
+
+.logo{
+  // display: block;
+  // margin-left: 50%;
+  // margin-right: 50%;
+  height: 7em;
+  padding-left: 40px;
+}
+
+.navLinks {
+  display: block;
+  // margin-left: 50%;
+  margin-right: 50%;
+}
