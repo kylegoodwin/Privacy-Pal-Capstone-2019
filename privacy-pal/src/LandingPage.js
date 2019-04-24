@@ -14,6 +14,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div>
+        <img src="img/HeaderLogo.png" className="logo"></img>
         {/* PRIVACY EDUCATION PLATFORM SECTION */}
         <div className="row d-flex align-items-center text-left sweg">
           <div className="col-sm-4">

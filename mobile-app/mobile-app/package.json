@@ -9,10 +9,13 @@
     "react-dom": "^16.8.6",
     "react-insta-stories": "github:kylegoodwin/react-insta-stories",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-swipeable": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -25,5 +28,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "https://github.com/kylegoodwin/Privacy-Pal-Capstone-2019.git"
 }

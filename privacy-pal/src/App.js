@@ -39,7 +39,7 @@ class App extends Component {
 
           <div className="App">
             <main>
-              <Navigation user={this.state.user}></Navigation>
+              {/* <Navigation user={this.state.user}></Navigation> */}
 
               <Route path="/" component={LandingPage} />
               {/* <Route path="/learning-page" component={LearningPage} />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import './Landing.css';
 import './Landing2'
+import { useSwipeable, Swipeable } from 'react-swipeable'
 export class Landing extends Component {
     constructor(props){
         super(props);
@@ -21,6 +22,7 @@ export class Landing extends Component {
         }
         return (
             <body id="landingBody" onClick={this.handleClick}>              
+            {/* <Swipeable onSwipedRight={(event) => this.handleClick}> */}
                 <div>
                     <img className="vertical-align:middle" src='/img/Tab-Icon.png' alt="Logo" />
                     <h1 className="text-white">PrivacyPal</h1>
@@ -29,10 +31,11 @@ export class Landing extends Component {
                     <h6 id="future" className="text-white">the Future. </h6>
                 </div>
                 <div id="circles">
-                        <span class="dot"></span>
-                        <span id="other" class="dot"></span>
+                        <span className="dot"></span>
+                        <span id="other" className="dot"></span>
                 </div>
                 <Link to='/Landing2'>{this.props.title}</Link>
+            {/* </Swipeable> */}
             </body>          
         )
     }
