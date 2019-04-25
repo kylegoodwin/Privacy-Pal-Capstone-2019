@@ -6,7 +6,7 @@ export class Discover extends Component {
     render() {
         return (
         <div className="cards-container">
-      <DiscoverCard  imageName="one" title="Social Media" linkither='/CardOne' backColor='#FF847C'/>
+      <DiscoverCard  imageName="one" title="Social Media" link='/CardOne' backColor='#FF847C'/>
       <DiscoverCard imageName="two" title="Internet Basics" backColor='#99B898'/>
       <DiscoverCard imageName="three" title="Games" backColor='#FECEA8'/>
       <DiscoverCard imageName="four" title="Location Services" backColor='#E84A5F'/>
@@ -34,15 +34,16 @@ class DiscoverCard extends Component {
   }
 
   render(){
+    console.log(this.props.link);
     if (this.state.clicked) {
       return (
-          <Redirect push to={this.props.linkither}/>
+          <Redirect push to={this.props.link}/>
       )
   }
     return(
         //style={ {backgroundImage: "url(/img/discover-photos/"+ this.props.imageName + ".jpg)"}}
       <div className="card"  onClick={this.handleClick} style={ {backgroundColor: this.props.backColor }}>
-      <h2 className="text-center"><Link to='/CardOne'>{this.props.title}</Link></h2>
+      <h2><Link to={this.props.link}>{this.props.title}</Link></h2>
       </div>
     )
 
