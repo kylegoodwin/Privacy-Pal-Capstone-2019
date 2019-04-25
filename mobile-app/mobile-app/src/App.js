@@ -4,8 +4,8 @@ import './App.css';
 import { Discover } from './Discover';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { CardOne } from './CardOne';
-
-
+import {Landing} from './Landing';
+import {Landing2} from './Landing2';
 class App extends Component {
   render() {
     return (
@@ -13,11 +13,17 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/' render={(routeProps) => (
-              <div>
-              <Toolbar />
-              <Discover />
-              </div>
+                <Landing />
               )} />
+              <Route exact path='/Landing2' render={(routeProps) => (
+                <Landing2 />
+              )} />
+              <Route exact path='/Discover' render={(routerProps) => (
+                <div>
+                  <Toolbar />
+                  <Discover />
+                </div>
+              )}/>
               <Route exact path='/CardOne' render={(routeProps) => (
               <CardOne />
               )} />

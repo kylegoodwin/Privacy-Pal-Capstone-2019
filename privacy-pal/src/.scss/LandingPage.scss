@@ -19,38 +19,32 @@ h1, h2 {
   width: 85%;
 }
 
-.icons{
-  padding: 100px 0px;
+// .icons{
+//   padding: 100px 0px;
   
-  #icons-heading {
-    padding: 0px 0px 30px 0px;
+#icons-heading {
+    padding: 10px 0px 30px 30px;
     font-family: 'Merriweather';
-  }
-  
-  ul{
-    list-style: none;
-    margin: 0;
-  }
-  
-  li{
-    display: inline-block;
-    margin: 2em 4em;
-
-    div{
-      width: 200px;
-
-      .icon-caption {
-        padding: 20px 0px 0px 0px;
-      }
-    }
-  }
-
-  img{
-    height: 200px;
-    width: 200px;
-    padding: 0 1em;
-  }
 }
+  
+//   ul{
+//     list-style: none;
+//     margin: 0;
+//   }
+  
+//   li{
+//     display: inline-block;
+//     margin: 2em 4em;
+
+//     div{
+//       width: 200px;
+
+//       .icon-caption {
+//         padding: 20px 0px 0px 0px;
+//       }
+//     }
+//   }
+// }
 
 #bigImage{
   background-image: url("/img/kids_guitar.png");
@@ -78,6 +72,10 @@ h1, h2 {
 
 }
 
+.icon-caption {
+  font-family: 'Merriweather';
+}
+
 .signUp{
   margin: 7em auto;
 
@@ -86,3 +84,21 @@ h1, h2 {
   }
 }
 
+
+.screen-shots{
+  height: 90%;
+  width: 90%;
+}
+.column {
+  float: left;
+  width: 33.33%;  
+}
+
+.sweg {
+  background-color: $gold;
+}
+
+.card-body {
+  background-color: $gold;
+  
+}

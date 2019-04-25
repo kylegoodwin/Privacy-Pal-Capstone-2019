@@ -1,0 +1,45 @@
+#body2 {
+    /* The image used */
+    background-image: url(landing2.jpg); 
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+Button {
+    position: absolute;
+    width: 90%;
+    top: 90%;
+    left: 5%;
+}
+
+#dot2 {
+    height: 20px;
+    width: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+#other2 {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+}
+#circles2 {
+    position: absolute;
+    bottom: 1%;
+    left: 43%;
+}
+
+h2 {
+    position: absolute;
+    bottom: 50%;
+}
