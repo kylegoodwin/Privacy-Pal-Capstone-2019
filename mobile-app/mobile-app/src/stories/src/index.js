@@ -52,6 +52,12 @@ export default class ReactInstaStories extends Component {
     } else return false
   }
 
+  isLastStory() {
+    if(this.c) {
+      return this.c.isLastStory();
+    } else return false
+  }
+
   toggleSeeMore(show) {
     if(this.c) {
       return this.c.toggleMore(show)
@@ -70,6 +76,7 @@ export default class ReactInstaStories extends Component {
           loader={this.props.loader}
           header={this.props.header}
           storyContentStyles={this.props.storyStyles}
+          usf={this.props.usf}
         />
       </div>
     )

@@ -35,17 +35,23 @@ export default class Container extends React.Component {
   }
 
   next = () => {
+    this.props.usf();
     if (this.state.currentId < this.props.stories.length - 1) {
       this.setState({
         currentId: this.state.currentId + 1,
         count: 0
       })
+      return true;
     }
-    return this.state.currentId;
+    return false;
   }
 
   getCurrentID = () => {
     return this.state.currentId;
+  }
+
+  isLastStory = () =>{
+    return this.state.currentId === this.props.stories.length - 1;
   }
 
   debouncePause = (e) => {

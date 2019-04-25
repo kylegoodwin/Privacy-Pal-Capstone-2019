@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Header from './Header'
 import SeeMore from './SeeMore'
 import globalStyle from './../styles.css'
-//import { Route, Redirect } from 'react-router'
 
 export default class Story extends React.Component {
   constructor(props) {
@@ -17,7 +16,7 @@ export default class Story extends React.Component {
     if (this.props.story !== prevProps.story) {
       this.pauseId && clearTimeout(this.pauseId)
       this.pauseId = setTimeout(() => {
-        this.setState({loaded: false})
+        this.setState({ loaded: false })
       }, 300)
       this.props.action('pause', true)
       this.vid && this.vid.addEventListener('waiting', () => {
@@ -41,7 +40,7 @@ export default class Story extends React.Component {
   imageLoaded = () => {
     try {
       if (this.pauseId) clearTimeout(this.pauseId)
-      this.setState({loaded: true})
+      this.setState({ loaded: true })
       this.props.action('play', true)
     } catch (e) {
       console.log(e)
@@ -63,32 +62,34 @@ export default class Story extends React.Component {
   getStoryContent() {
     let source = typeof this.props.story === 'object' ? this.props.story.url : this.props.story
     let storyContentStyles = this.props.story.styles || this.props.storyContentStyles || styles.storyContent
-    let type = this.props.story.type === 'video' ? 'video' : 'image'    
+    let type = this.props.story.type === 'video' ? 'video' : 'image'
     return (
       type === 'image' ? <img
-          style={storyContentStyles}
-          src={source}
-          onLoad={this.imageLoaded}
-        /> : (type === 'video' ? <video ref={r => { this.vid = r }} style={storyContentStyles} src={source} controls={false} onLoadedData={this.videoLoaded} autoPlay /> : null)
+        style={storyContentStyles}
+        src={source}
+        onLoad={this.imageLoaded}
+      /> : (type === 'video' ? <video ref={r => { this.vid = r }} style={storyContentStyles} src={source} controls={false} onLoadedData={this.videoLoaded} autoPlay /> : null)
     )
   }
   //style={{ fontFamily: 'Helvetica', fontWeight: 'bold' , backgroundColor: 'black', position: 'absolute', left: 12, bottom: 100, zIndex: 9999}}
   render() {
     let isHeader = typeof this.props.story === 'object' && this.props.story.header
+
     return (
-      <div style={{...styles.story, width: this.props.width, height: this.props.height}}>
+
+      <div style={{ ...styles.story, width: this.props.width, height: this.props.height }}>
 
         {this.getStoryContent()}
         <h3> Hello this is a test</h3>
 
-        {isHeader && <div style={{position: 'absolute', left: 12, top: 20, zIndex: 19}}>
+        {isHeader && <div style={{ position: 'absolute', left: 12, top: 20, zIndex: 19 }}>
           {this.props.header ? () => this.props.header(this.props.story.header) : <Header heading={this.props.story.header.heading} subheading={this.props.story.header.subheading} profileImage={this.props.story.header.profileImage} />}
         </div>}
-        {!this.state.loaded && <div style={{width: this.props.width, height: this.props.height, position: 'absolute', left: 0, top: 0, background: 'rgba(0, 0, 0, 0.9)', zIndex: 9, display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ccc'}}>{this.props.loader || <div className={globalStyle.spinner} />}</div>}
+        {!this.state.loaded && <div style={{ width: this.props.width, height: this.props.height, position: 'absolute', left: 0, top: 0, background: 'rgba(0, 0, 0, 0.9)', zIndex: 9, display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ccc' }}>{this.props.loader || <div className={globalStyle.spinner} />}</div>}
         {this.props.story.seeMore &&
-        <div style={{position: 'absolute', margin: 'auto', bottom: 0, zIndex: 9999, width: '100%'}}>
-          <SeeMore action={this.props.action} toggleMore={this.toggleMore} showContent={this.state.showMore} seeMoreContent={this.props.story.seeMore} />
-        </div>}
+          <div style={{ position: 'absolute', margin: 'auto', bottom: 0, zIndex: 9999, width: '100%' }}>
+            <SeeMore action={this.props.action} toggleMore={this.toggleMore} showContent={this.state.showMore} seeMoreContent={this.props.story.seeMore} />
+          </div>}
       </div>
     )
   }
