@@ -65,7 +65,7 @@ export class CardOne extends Component {
                         onClick={this.tester}
                     />) : (
                         <Route>
-                            <Redirect to="/" />
+                            <Redirect to="/Discover" />
                         </Route>
                     )}
 

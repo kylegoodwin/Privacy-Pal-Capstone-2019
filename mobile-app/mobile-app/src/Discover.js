@@ -42,11 +42,7 @@ class DiscoverCard extends Component {
     return(
         //style={ {backgroundImage: "url(/img/discover-photos/"+ this.props.imageName + ".jpg)"}}
       <div className="card"  onClick={this.handleClick} style={ {backgroundColor: this.props.backColor }}>
-      
-      <div>
-      <h3 className="text-center"><Link to='/CardOne'>{this.props.title}</Link></h3>
-      </div>
-      {/* <Link className="blur" to='/CardOne'></Link> */}
+      <h2 className="text-center"><Link to='/CardOne'>{this.props.title}</Link></h2>
       </div>
     )
 
