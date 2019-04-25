@@ -41,8 +41,8 @@ class Toolbar extends Component {
 
   render(){
     return(
-    <div className="toolbar" >
-    <div class="gradient-menu"></div>
+    <div className="toolbar">
+    <div className="gradient-menu"></div>
     Discover
     </div>
     )
