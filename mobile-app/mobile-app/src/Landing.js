@@ -21,7 +21,7 @@ export class Landing extends Component {
             )
         }
         return (
-            <body id="landingBody" onClick={this.handleClick}>              
+            <div id="landingBody" onClick={this.handleClick}>              
             {/* <Swipeable onSwipedRight={(event) => this.handleClick}> */}
                 <div>
                     <img className="vertical-align:middle" src='/img/Tab-Icon.png' alt="Logo" />
@@ -36,7 +36,7 @@ export class Landing extends Component {
                 </div>
                 <Link to='/Landing2'>{this.props.title}</Link>
             {/* </Swipeable> */}
-            </body>          
+            </div>          
         )
     }
 }

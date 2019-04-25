@@ -6,16 +6,16 @@ export class Discover extends Component {
     render() {
         return (
         <div className="cards-container">
-      <DiscoverCard  imageName="one" title="Social Media" linkither='/CardOne'/>
-      <DiscoverCard imageName="two" title="Internet Basics" />
-      <DiscoverCard imageName="three" title="Games"/>
-      <DiscoverCard imageName="four" title="Location Services"/>
-      <DiscoverCard imageName="five" title="Online Identity"/>
-      <DiscoverCard imageName="one" title="Social Media"/>
-      <DiscoverCard imageName="two" title="Internet Basics"/>
-      <DiscoverCard imageName="three" title="Games"/>
-      <DiscoverCard imageName="four" title="Location Services"/>
-      <DiscoverCard imageName="five" title="Online Identity"/>
+      <DiscoverCard  imageName="one" title="Social Media" linkither='/CardOne' backColor='#FF847C'/>
+      <DiscoverCard imageName="two" title="Internet Basics" backColor='#99B898'/>
+      <DiscoverCard imageName="three" title="Games" backColor='#FECEA8'/>
+      <DiscoverCard imageName="four" title="Location Services" backColor='#E84A5F'/>
+      <DiscoverCard imageName="five" title="Online Identity" backColor='#2A363B'/>
+      <DiscoverCard imageName="one" title="Social Media" backColor='#FF847C'/>
+      <DiscoverCard imageName="two" title="Internet Basics" backColor='#99B898'/>
+      <DiscoverCard imageName="three" title="Games" backColor='#FECEA8'/>
+      <DiscoverCard imageName="four" title="Location Services" backColor='#E84A5F'/>
+      <DiscoverCard imageName="five" title="Online Identity" backColor='#2A363B'/>
       </div>
         )
     }
@@ -40,12 +40,13 @@ class DiscoverCard extends Component {
       )
   }
     return(
-        
-      <div className="card"  onClick={this.handleClick} style={ {backgroundImage: "url(/img/discover-photos/"+ this.props.imageName + ".jpg)"}}>
+        //style={ {backgroundImage: "url(/img/discover-photos/"+ this.props.imageName + ".jpg)"}}
+      <div className="card"  onClick={this.handleClick} style={ {backgroundColor: this.props.backColor }}>
       
-      <h2><Link to='/CardOne'>{this.props.title}</Link></h2>
-    
-      <Link className="blur" style={ {backgroundImage: "url(/img/discover-photos/"+ this.props.imageName + ".jpg)"}} to='/CardOne'></Link>
+      <div>
+      <h3 className="text-center"><Link to='/CardOne'>{this.props.title}</Link></h3>
+      </div>
+      {/* <Link className="blur" to='/CardOne'></Link> */}
       </div>
     )
 

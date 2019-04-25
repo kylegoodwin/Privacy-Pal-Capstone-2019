@@ -5,6 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    overflow: hidden
 }
 
 img {
@@ -54,6 +55,6 @@ h6 {
 }
 #circles {
     position: relative;
-    top: 69%;
+     top: 69%;
     left: 43%;
 }

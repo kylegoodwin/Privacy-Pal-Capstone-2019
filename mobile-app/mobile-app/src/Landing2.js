@@ -22,24 +22,24 @@ export class Landing2 extends Component {
             )
         }
         return (
-            <body id="body2">
+            <div id="body2">
                 <div>
                 <h2>
-                    <Link className="swagither" to='/' title="previous page" class="previous">&laquo; </Link>
+                    <Link className="swagither" to='/' title="previous page" className="previous">&laquo; </Link>
                 </h2>
                     <h1 className="text-white">Begin</h1>
                     <h1 className="text-white">Your</h1>
                     <h1 className="text-white">Journey</h1>
                     <h1 className="text-white">Today</h1>
                     <div className="d-inline" id="circles2">
-                        <span className="d-inline" id="dot2" class="dot"></span>
-                        <span className="d-inline" id="other2" class="dot"></span>
+                        <span className="d-inline" id="dot2" className="dot"></span>
+                        <span className="d-inline" id="other2" className="dot"></span>
                     </div>
                     <Button variant="outline-light" onClick={this.handleClick}>Click Here to Begin
                         <Link to='/Discover'></Link>
                     </Button>                    
                 </div>
-            </body>
+            </div>
         )
     }
 }
