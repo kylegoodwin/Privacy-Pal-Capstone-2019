@@ -5,7 +5,9 @@ import { Redirect } from 'react-router';
 export class Discover extends Component {
     render() {
         return (
-        <div className="cards-container">
+      <div className="discover-body">
+        <p> Tap on a story below to learn more about your digital privacy </p>
+      <div className="cards-container">
       <DiscoverCard  imageName="one" title="Social Media" link='/CardOne' backColor='#FF847C'/>
       <DiscoverCard imageName="two" title="Internet Basics" backColor='#99B898'/>
       <DiscoverCard imageName="three" title="Games" backColor='#FECEA8'/>
@@ -16,6 +18,7 @@ export class Discover extends Component {
       <DiscoverCard imageName="three" title="Games" backColor='#FECEA8'/>
       <DiscoverCard imageName="four" title="Location Services" backColor='#E84A5F'/>
       <DiscoverCard imageName="five" title="Online Identity" backColor='#2A363B'/>
+      </div>
       </div>
         )
     }

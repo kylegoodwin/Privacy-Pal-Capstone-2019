@@ -79,9 +79,9 @@ export default class Story extends React.Component {
 
       <div id="story-container-extension" style={{ ...styles.story, width: this.props.width, height: this.props.height }}>
 
-        <div style={{  zIndex: '9999', fontSize: '2em', color: 'white', position: 'absolute', top: '100px', background: 'black', padding: '20px'}}> {this.props.story.topText}</div>
+        { this.props.story.topText && <div style={{  zIndex: '9999', fontSize: '2em', color: 'white', position: 'absolute', top: '100px', background: 'black', padding: '20px'}}> {this.props.story.topText}</div>}
         {this.getStoryContent()}
-        <div style={{  zIndex: '9999', fontSize: '2em', color: 'white', position: 'absolute', bottom: '100px', background: 'black', padding: '20px'}}>{this.props.story.bottomText}</div>
+        { this.props.story.bottomText && <div style={{  zIndex: '9999', fontSize: '2em', color: 'white', position: 'absolute', bottom: '100px', background: 'black', padding: '20px'}}>{this.props.story.bottomText}</div>}
 
         {isHeader && <div style={{ position: 'absolute', left: 12, top: 20, zIndex: 19 }}>
           {this.props.header ? () => this.props.header(this.props.story.header) : <Header heading={this.props.story.header.heading} subheading={this.props.story.header.subheading} profileImage={this.props.story.header.profileImage} />}

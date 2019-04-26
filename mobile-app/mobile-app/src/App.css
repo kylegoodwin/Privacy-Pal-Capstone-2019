@@ -4,6 +4,18 @@ body{
   background: black;
 }
 
+.discover-body p {
+ width: 70%;
+ color: white;
+ margin: 1em auto;
+}
+
+#home-button{
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+}
+
 .cards-container{
   width: 100%;
   flex-wrap: wrap;
@@ -33,8 +45,7 @@ body{
 
 h2,a,a:hover{
   color: white;
-  text-decoration: none;
-  
+  text-decoration: none; 
 }
 
 .cards-container::after{
@@ -43,13 +54,15 @@ h2,a,a:hover{
   margin-left: 100px;
 }
 
-.toolbar{
+.story-toolbar{
+  text-align: left;
   height: 75px;
 }
 
+
 .toolbar{
   font-size: 50px;
-  text-align: right;
+  text-align: center;
   margin-right: .5em;
 }
 
