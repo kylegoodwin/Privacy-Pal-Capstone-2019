@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "privacypal.me/static/js/runtime~main.08c08e1a.js"
   },
   {
-    "revision": "9a23b8dc20ab42ac0820",
-    "url": "privacypal.me/static/js/main.949d0bc3.chunk.js"
+    "revision": "b8c230bf4843cb088a0a",
+    "url": "privacypal.me/static/js/main.badb4b89.chunk.js"
   },
   {
-    "revision": "36cb0716656a251a6ca8",
-    "url": "privacypal.me/static/js/2.8ec0239a.chunk.js"
+    "revision": "e9630f06cae0d7f6bb72",
+    "url": "privacypal.me/static/js/2.af2953f7.chunk.js"
   },
   {
-    "revision": "9a23b8dc20ab42ac0820",
+    "revision": "b8c230bf4843cb088a0a",
     "url": "privacypal.me/static/css/main.8c6fcecd.chunk.css"
   },
   {
-    "revision": "a288b1b97514ff189826a8d8d3520b11",
+    "revision": "4f66c24b789169032f743d1c7f0df406",
     "url": "privacypal.me/index.html"
   }
 ];
