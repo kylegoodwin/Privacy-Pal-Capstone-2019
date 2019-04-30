@@ -1,13 +1,16 @@
 {
-  "main.css": "/static/css/main.7bb2cbac.chunk.css",
-  "main.js": "/static/js/main.e4e2c6fd.chunk.js",
-  "main.js.map": "/static/js/main.e4e2c6fd.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
-  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
-  "static/js/2.3a2ab27c.chunk.js": "/static/js/2.3a2ab27c.chunk.js",
-  "static/js/2.3a2ab27c.chunk.js.map": "/static/js/2.3a2ab27c.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.f71829cf444674fff19409ad450fbe72.js": "/precache-manifest.f71829cf444674fff19409ad450fbe72.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.7bb2cbac.chunk.css.map": "/static/css/main.7bb2cbac.chunk.css.map"
+  "main.css": "www.privacypal.me/static/css/main.44d417e0.chunk.css",
+  "main.js": "www.privacypal.me/static/js/main.e21fe6f8.chunk.js",
+  "main.js.map": "www.privacypal.me/static/js/main.e21fe6f8.chunk.js.map",
+  "runtime~main.js": "www.privacypal.me/static/js/runtime~main.56ca012f.js",
+  "runtime~main.js.map": "www.privacypal.me/static/js/runtime~main.56ca012f.js.map",
+  "static/js/2.ece189ad.chunk.js": "www.privacypal.me/static/js/2.ece189ad.chunk.js",
+  "static/js/2.ece189ad.chunk.js.map": "www.privacypal.me/static/js/2.ece189ad.chunk.js.map",
+  "index.html": "www.privacypal.me/index.html",
+  "precache-manifest.6a016a3bacadeb56bfac3789761d6493.js": "www.privacypal.me/precache-manifest.6a016a3bacadeb56bfac3789761d6493.js",
+  "service-worker.js": "www.privacypal.me/service-worker.js",
+  "static/css/main.44d417e0.chunk.css.map": "www.privacypal.me/static/css/main.44d417e0.chunk.css.map",
+  "static/media/Landing.css": "www.privacypal.me/static/media/landguy.8839c948.jpg",
+  "static/media/Landing2.css": "www.privacypal.me/static/media/landing2.c230059d.jpg",
+  "static/media/logo.svg": "www.privacypal.me/static/media/logo.5d5d9eef.svg"
 }
