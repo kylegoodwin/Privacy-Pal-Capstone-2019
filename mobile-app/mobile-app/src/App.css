@@ -1,14 +1,29 @@
 
+
+
+
 body{
   font-family: Arial, Helvetica, sans-serif;
-  background: black;
+  background: #303c71;
 }
 
 .discover-body p {
  width: 70%;
  color: white;
- margin: 1em auto;
+ text-align: left;
+ font-size: 1em;
+ vertical-align: bottom;
 }
+
+.discover-body p:last-of-type {
+  margin-top: 20px;
+ }
+
+.toolbar,.discover-body p{
+  margin-left:  30px;
+  margin-bottom: 20px;
+}
+
 
 #home-button{
   margin: 10px;
@@ -27,7 +42,7 @@ body{
   display: flex;
   width: 45%;
   height: 150px;
-  margin: 4px;
+  margin: 6px;
   border-radius: 25px;
   border: none;
   /* background-color: #FF847C */
@@ -57,16 +72,23 @@ h2,a,a:hover{
 .story-toolbar{
   text-align: left;
   height: 75px;
+  background-color: black;
 }
 
 
 .toolbar{
-  font-size: 50px;
-  text-align: center;
-  margin-right: .5em;
+  font-size: 100%;
+  text-align: left;
+  height: 75px;
+  display: flex;
+  align-items:center;
+}
+
+#toolbar-icon{
+  height: 75%;
 }
 
 .toolbar h1{
   color: white;
-  margin-top: 1em;
+  margin-left: 1em;
 }

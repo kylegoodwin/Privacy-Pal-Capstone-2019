@@ -20,7 +20,6 @@ class App extends Component {
               )} />
               <Route exact path='/Discover' render={(routerProps) => (
                 <div>
-                  <Toolbar />
                   <Discover />
                 </div>
               )}/>
@@ -33,18 +32,6 @@ class App extends Component {
       {/* <div className="triangle" /> */}
       </div>
     );
-  }
-}
-
-
-class Toolbar extends Component {
-
-  render(){
-    return(
-    <div className="toolbar">
-    <h1>Discover</h1>
-    </div>
-    )
   }
 }
 
