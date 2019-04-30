@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "privacypal.me/precache-manifest.6742af773a5d699d2db598059219404b.js"
+  "/Privacy-Pal-Capstone-2019/precache-manifest.091c0dfb49dfa39646f879853392eab2.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("privacypal.me/index.html", {
+workbox.routing.registerNavigationRoute("/Privacy-Pal-Capstone-2019/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
