@@ -4,17 +4,17 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
-    "react-insta-stories": "github:kylegoodwin/react-insta-stories",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-swipeable": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "yarn run build",
+    "predeploy": "npm run build && cp CNAME build/CNAME",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -29,5 +29,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "https://github.com/kylegoodwin/Privacy-Pal-Capstone-2019.git"
+  "homepage": "https://privacypal.me"
 }
