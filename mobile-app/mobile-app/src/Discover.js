@@ -18,8 +18,8 @@ export class Discover extends Component {
       <Toolbar />
         <p> Tap on a story below to learn more about your digital privacy </p>
         <LearnCards />
-        <h1>Quiz Time!</h1>
-        <p> Tap on a quiz to test your knowlege, complete them all to earn your badge!</p>
+        <h1>Discuss</h1>
+        <p> Tap on a module to test your knowlege, and discuss what you have learned. Complete them all to earn your badge!</p>
      <QuizCards ></QuizCards>
       </div>
     )
@@ -31,10 +31,10 @@ class LearnCards extends Component {
   render(){
     return(
       <div className="cards-container">
-      <DiscoverCard imageName="one" title="Social Media" link='/modules/moderation' backColor='#FF847C' />
-      <DiscoverCard imageName="two" title="Internet Basics" link='/modules/identity' backColor='#99B898' />
-      <DiscoverCard imageName="three" title="Internet Economy" link='/modules/friends' backColor='#2A363B' />
-      <DiscoverCard imageName="four" title="Location Services" link='/modules/moderation' backColor='#E84A5F' />
+      <DiscoverCard imageName="one" title="Introduction" link='/modules/moderation' backColor='#FF847C' />
+      <DiscoverCard imageName="two" title="Moderation" link='/modules/identity' backColor='#99B898' />
+      <DiscoverCard imageName="three" title="Who do you share with?" link='/modules/friends' backColor='#2A363B' />
+      <DiscoverCard imageName="four" title="Your Posts Live Forever" link='/modules/moderation' backColor='#E84A5F' />
     </div>
 
     )
@@ -50,9 +50,9 @@ class QuizCards extends Component {
 
       <div className="cards-container">
       <DiscoverCard imageName="one" title="Social Media" link='/Quiz/1' backColor='#FF847C' />
-      <DiscoverCard imageName="two" title="Internet Basics" link='/CardOne' backColor='#99B898' />
-      <DiscoverCard imageName="three" title="Internet Economy" link='/CardOne' backColor='#2A363B' />
-      <DiscoverCard imageName="four" title="Location Services" link='/CardOne' backColor='#E84A5F' />
+      <DiscoverCard imageName="two" title="Internet Basics" link='/Quiz/1' backColor='#99B898' />
+      <DiscoverCard imageName="three" title="Internet Economy" link='/Quiz/1' backColor='#2A363B' />
+      <DiscoverCard imageName="four" title="Location Services" link='/Quiz/1' backColor='#E84A5F' />
     </div>
 
     )
