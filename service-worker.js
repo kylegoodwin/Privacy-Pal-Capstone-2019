@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/kylegoodwin/Privacy-Pal-Capstone-2019.git/precache-manifest.ab0b9522d561d70c417c4574f071275f.js"
+  "/kylegoodwin/Privacy-Pal-Capstone-2019.git/precache-manifest.95b2dd5ef4b488462f70f22c1f4bb7cc.js"
 );
 
 workbox.clientsClaim();
