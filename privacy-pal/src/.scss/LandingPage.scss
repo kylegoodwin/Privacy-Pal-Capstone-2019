@@ -7,50 +7,95 @@ $red: #ce8585;
 
 *{box-sizing: border-box;}
 
+main {
+  width: 100%;
+}
+
 h1, h2 {
   font-family: 'Merriweather';
+  font-size: 3vw;
 }
 
-.card-title{
-  margin-left: .5em;
-}
+.sweg {
+  background-color: $gold;
 
-.header-image{
-  width: 85%;
-}
+  .card-title{
+    margin-left: .5em;
+    font-size: 5vw;
+  }
 
-// .icons{
-//   padding: 100px 0px;
-  
-#icons-heading {
+  .header-image{
+    width: 85%;
+  }
+} 
+
+.lessons {
+  width: 100%;
+
+  #icons-heading {
     padding: 10px 0px 30px 30px;
     font-family: 'Merriweather';
+    font-size: 5vw;
+  }
+  
+  #pic {
+    width: 75vh;
+    margin-left: auto;
+    margin-right: auto;  
+    margin-bottom: 2vh;
+    text-align: center;
+
+    .screen-shots{
+      height: 90%;
+      width: 90%;
+    }
+
+    .icon-caption {
+      font-family: 'Merriweather';
+      font-size: 2vw;   
+      margin-top: .5em; 
+      text-align: center;
+    }
+
+  }
 }
-  
-//   ul{
-//     list-style: none;
-//     margin: 0;
-//   }
-  
-//   li{
-//     display: inline-block;
-//     margin: 2em 4em;
 
-//     div{
-//       width: 200px;
+.examples {
+  background-color: $gold;
+  width: 100%;
 
-//       .icon-caption {
-//         padding: 20px 0px 0px 0px;
-//       }
-//     }
-//   }
-// }
+  #icons-heading {
+    padding: 10px 0px 30px 30px;
+    font-family: 'Merriweather';
+    font-size: 5vw;
+  }
+
+  #pic {
+    width: 75vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15vh;
+    text-align: center; 
+
+    .screen-shots{
+      height: 90%;
+      width: 90%;
+    }
+
+    .icon-caption {
+      font-family: 'Merriweather';
+      font-size: 5vw;   
+      margin-top: .5em; 
+    }
+  }
+}
+
 
 #bigImage{
   background-image: url("/img/kids_guitar.png");
   background-size: cover;
   background-position: center;
-  height: 950px;
+  height: 100%;
   width: 100%;
   background-attachment: fixed;
   background-position: center;
@@ -65,6 +110,7 @@ h1, h2 {
     margin: 1em;
     top: 50%; 
     left: 50%;
+    font-size: 6vw;
   }
 
   .image-text {
@@ -73,13 +119,9 @@ h1, h2 {
     padding: 1em;
     font-family: 'Merriweather';
     vertical-align: middle;
-    // line-height: 30px;
+    font-size: 5vw; 
   }
 
-}
-
-.icon-caption {
-  font-family: 'Merriweather';
 }
 
 .signUp{
@@ -90,45 +132,24 @@ h1, h2 {
   }
 }
 
-
-.screen-shots{
-  height: 90%;
-  width: 90%;
-}
-.column {
-  float: left;
-  width: 33.33%;  
-}
-
-.sweg {
-  background-color: $gold;
-}
-
 .card-body {
-  background-color: $gold;
-  
-}
-
-.center-guy {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.examples {
   background-color: $gold;
 }
 
 #about {
-  height: 700px;
+  height: 600px;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-}
 
-#mission {
-  height: 700px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  h1 {
+    padding-top: 1em;
+    font-size: 10vw;
+  }
+
+  p {
+    font-size: 3vw;
+    margin-bottom: 5em; 
+
+  }
 }
