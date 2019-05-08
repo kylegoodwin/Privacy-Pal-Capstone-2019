@@ -1,16 +1,13 @@
 {
-  "main.css": "/static/css/main.68ee60b3.chunk.css",
-  "main.js": "/static/js/main.50b4dc4b.chunk.js",
-  "main.js.map": "/static/js/main.50b4dc4b.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.0141933c.chunk.js": "/static/js/2.0141933c.chunk.js",
-  "static/js/2.0141933c.chunk.js.map": "/static/js/2.0141933c.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.e9ac6cb04afc374de2801b9c3c2abbb9.js": "/precache-manifest.e9ac6cb04afc374de2801b9c3c2abbb9.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.68ee60b3.chunk.css.map": "/static/css/main.68ee60b3.chunk.css.map",
-  "static/media/Landing.css": "/static/media/landguy.8839c948.jpg",
-  "static/media/Landing2.css": "/static/media/landing2.c230059d.jpg",
-  "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+  "main.css": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/static/css/main.69f064a7.chunk.css",
+  "main.js": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/static/js/main.e97e10b8.chunk.js",
+  "main.js.map": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/static/js/main.e97e10b8.chunk.js.map",
+  "runtime~main.js": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/static/js/runtime~main.352af1b7.js",
+  "runtime~main.js.map": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/static/js/runtime~main.352af1b7.js.map",
+  "static/js/2.42d5ef36.chunk.js": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/static/js/2.42d5ef36.chunk.js",
+  "static/js/2.42d5ef36.chunk.js.map": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/static/js/2.42d5ef36.chunk.js.map",
+  "index.html": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/index.html",
+  "precache-manifest.ab0b9522d561d70c417c4574f071275f.js": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/precache-manifest.ab0b9522d561d70c417c4574f071275f.js",
+  "service-worker.js": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/service-worker.js",
+  "static/css/main.69f064a7.chunk.css.map": "/kylegoodwin/Privacy-Pal-Capstone-2019.git/static/css/main.69f064a7.chunk.css.map"
 }
