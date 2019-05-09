@@ -21,7 +21,10 @@ export class Quiz extends Component {
 
   handleAnswer = (answer) => {
 
-    if( answer === this.props.question.correctIndex){
+    console.log(answer);
+    console.log(this.props.question.correctIndex);
+    if( answer == this.props.question.correctIndex){
+      console.log("HERE");
       this.setState({
         correctAnswer: true
       })
@@ -85,6 +88,7 @@ class Answer extends Component {
 
     let display;
 
+    console.log("bottom "+ this.props.correctAnswer)
     if( this.props.correctAnswer){
       display = this.props.question.correctText;
     }else{
@@ -95,7 +99,7 @@ class Answer extends Component {
     return (
       <div className="quiz-answer-body">
         <div>
-          <span> You are wrong!  You must also consider that the people who have access to you content can store it and send it any where they please.</span>
+          <span> {display} </span>
         </div>
         <button onClick={this.props.buttonFunction} > Next Question </button>
       </div>

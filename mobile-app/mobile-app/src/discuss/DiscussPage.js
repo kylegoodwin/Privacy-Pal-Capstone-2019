@@ -37,7 +37,6 @@ export class DiscussPage extends Component {
     this.setState({
       questionNumber: newValue
     })
-    console.log("button function " + this.state.questionNumber);
 
   }
 

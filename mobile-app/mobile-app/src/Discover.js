@@ -75,7 +75,7 @@ class DiscoverCard extends Component {
   }
 
   render() {
-    console.log(this.props.link);
+
     if (this.state.clicked) {
       return (
         <Redirect push to={this.props.link} />
