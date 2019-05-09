@@ -9,8 +9,6 @@ export class Quiz extends Component {
       hasAnswered: false,
       correctAnswer: false
     }
-
-
   }
 
   hasAnswered = () => {
@@ -21,16 +19,11 @@ export class Quiz extends Component {
 
   handleAnswer = (answer) => {
 
-    console.log(answer);
-    console.log(this.props.question.correctIndex);
-    if( answer == this.props.question.correctIndex){
-      console.log("HERE");
+    if (answer == this.props.question.correctIndex) {
       this.setState({
         correctAnswer: true
       })
     }
-
-
   }
 
   render = () => {
@@ -88,10 +81,9 @@ class Answer extends Component {
 
     let display;
 
-    console.log("bottom "+ this.props.correctAnswer)
-    if( this.props.correctAnswer){
+    if (this.props.correctAnswer) {
       display = this.props.question.correctText;
-    }else{
+    } else {
       display = this.props.question.wrongText;
     }
 

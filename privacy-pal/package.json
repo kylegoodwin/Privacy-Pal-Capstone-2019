@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "yarn run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -32,5 +32,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "https://github.com/kylegoodwin/Privacy-Pal-Capstone-2019.git"
+  "homepage": "https://privacypal.me"
 }
