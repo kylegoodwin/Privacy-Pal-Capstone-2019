@@ -35,28 +35,31 @@ class LandingPage extends Component {
             </div>
           </div>
         </div>
+        <div className="platform">
+          <img id="streamline" src="/img/platform.png"/>
+        </div>
         {/* LESSONS */}
         <div className="lessons">
           <div>
             <h1 className="pt-5" id="icons-heading">  Lessons on Social Media: </h1>
           </div>
           <div className="row">
-            <div id="pic" className="col md-5">
-              <img className="screen-shots pl-4" src="img/posting-moderation.png"></img>
+            <div className="col md-5 pic">
+              <img className="screen-shots" src="img/posting-moderation.png"></img>
               <div>
                 <p className="icon-caption text-center font-weight-bold">Posting in Moderation</p>
               </div>
             </div>
-            <div id="pic" className="col md-5">
+            <div className="col md-5 pic">
               <img className="screen-shots" src="img/online-networking.png"></img>
               <div>
-                <p className="icon-caption text-center pr-5 font-weight-bold">Online Friends And Your Network</p>
+                <p className="icon-caption text-center font-weight-bold">Online Friends And Your Network</p>
               </div>
             </div>
-            <div id="pic" className="col md-5 ">
+            <div className="col md-5 pic">
               <img className="screen-shots" src="img/identity.png"></img>
               <div>
-                <p className="icon-caption text-center pr-5 font-weight-bold">Online Identity</p>
+                <p className="icon-caption text-center font-weight-bold">Online Identity</p>
               </div>
             </div>
           </div>
@@ -69,13 +72,13 @@ class LandingPage extends Component {
           </div>
           <div className="row">
             {/* <section className="icons" align="center">  */}
-            <div id="pic" className="col-md-6">
+            <div className="col-md-4 pic">
               <img className="screen-shots pl-5" src="img/story2.png"></img>
               <div>
                 <p className="icon-caption text-center font-weight-bold">Sensitive Topic Posting</p>
               </div>
             </div>
-            <div id="pic" className="col-md-6">
+            <div className="col-md-4 pic">
               <img className="screen-shots pl-5" src="img/story1.png"></img>
               <div>
                 <p className="icon-caption text-center font-weight-bold">Unknown Networks</p>

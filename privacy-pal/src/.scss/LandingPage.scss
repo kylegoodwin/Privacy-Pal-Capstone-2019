@@ -19,6 +19,10 @@ h1, h2 {
 .sweg {
   background-color: $gold;
 
+  .card-body {
+    background-color: $gold;
+  }
+
   .card-title{
     margin-left: .5em;
     font-size: 5vw;
@@ -29,8 +33,18 @@ h1, h2 {
   }
 } 
 
+.platform {
+  width: 100%;
+
+  #streamline {
+    width: 100%;
+  
+  }
+}
+
 .lessons {
   width: 100%;
+  background-color: $gold;
 
   #icons-heading {
     padding: 10px 0px 30px 30px;
@@ -38,16 +52,15 @@ h1, h2 {
     font-size: 5vw;
   }
   
-  #pic {
-    width: 75vh;
+  .pic {
     margin-left: auto;
     margin-right: auto;  
     margin-bottom: 2vh;
     text-align: center;
 
     .screen-shots{
-      height: 90%;
-      width: 90%;
+      height: 80%;
+      width: 80%;
     }
 
     .icon-caption {
@@ -61,7 +74,6 @@ h1, h2 {
 }
 
 .examples {
-  background-color: $gold;
   width: 100%;
 
   #icons-heading {
@@ -70,16 +82,15 @@ h1, h2 {
     font-size: 5vw;
   }
 
-  #pic {
-    width: 75vh;
+  .pic {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15vh;
     text-align: center; 
 
     .screen-shots{
-      height: 90%;
-      width: 90%;
+      height: 65%;
+      width: 100%;
     }
 
     .icon-caption {
@@ -132,9 +143,7 @@ h1, h2 {
   }
 }
 
-.card-body {
-  background-color: $gold;
-}
+
 
 #about {
   height: 600px;
