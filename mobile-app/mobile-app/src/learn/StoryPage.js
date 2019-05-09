@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import Stories from './stories/dist';
+import Stories from '../stories/dist'
 
 export class StoryPage extends Component {
 

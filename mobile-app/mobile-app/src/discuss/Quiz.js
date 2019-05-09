@@ -6,7 +6,7 @@ export class Quiz extends Component {
         let answers = ["Everyone","Just my followers","Just me"];
       return ( 
       <div className="quiz-body">
-    <Question question="Who can see the pictures that you post?" answers={answers} answer={0}> </Question>
+    <Question buttonFunction={this.props.buttonFunction} question="Who can see the pictures that you post?" answers={answers} answer={0}> </Question>
        </div>)
     }
 }
@@ -22,9 +22,11 @@ export class Question extends Component {
 
     return (
       <div className="question-body">
+      <div onClick={this.props.buttonFunction} > test </div>
       <h1> Question 1:</h1>
       <h2>{this.props.question}</h2>
       {answers}
+      
       </div>
     )
   }
