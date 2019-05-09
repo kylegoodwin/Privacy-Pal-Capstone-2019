@@ -18,12 +18,15 @@ export class DiscussPage extends Component {
   whatContentToDisplay = (displayItem) => {
 
     if( displayItem.type == "question" ){
-      return <Quiz buttonFunction={this.buttonFunction} ></Quiz>;
+      return <Quiz question={displayItem.question} buttonFunction={this.buttonFunction} ></Quiz>;
     }
 
     if( displayItem.type == "response"){
       return <Discuss buttonFunction={this.buttonFunction} prompt={displayItem.prompt}></Discuss>;
     }
+
+    //add in photo type of quiz
+
 
   }
 

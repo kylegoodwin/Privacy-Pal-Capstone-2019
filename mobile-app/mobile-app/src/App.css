@@ -144,3 +144,21 @@ h2,a,a:hover{
   border-radius: 10px;
   border: 2px solid black;
 }
+
+
+.quiz-answer-body button{ 
+  background-color: wheat;
+  font-size: 1em;
+  padding: 1em;
+  margin: 1em;
+}
+
+.quiz-answer-body div{
+  background-color: white;
+  padding: 1em;
+  margin: 1em;
+}
+
+.quiz-answer-body span{
+  font-size: 2em;
+}
