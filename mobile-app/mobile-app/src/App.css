@@ -88,11 +88,12 @@ h2,a,a:hover{
 .question-body{
   width: 100vw;
   height: 100vh;
-  background-color: bisque;
+  background: rgb(241,230,172);
+  background: linear-gradient(0deg, rgba(241,230,172,1) 13%, rgba(48,60,111,1) 100%);
 }
 
 .question-body h1, .question-body h2{
-  text-align: center;
+  padding: .5em 0em .5em 1em;
 }
 
 .question-body h2{
@@ -100,13 +101,12 @@ h2,a,a:hover{
 }
 
 .question-body div{
-  background-color: gray;
-  color: white;
+  background-color: white;
   font-size: 2em;
   width: 50%;
   margin: 1em auto;
   padding: .5em;
-  border-radius: 25px;
+  border-radius: 10px;
 
 }
 
@@ -147,7 +147,6 @@ h2,a,a:hover{
 
 
 .quiz-answer-body button{ 
-  background-color: wheat;
   font-size: 1em;
   padding: 1em;
   margin: 1em;
