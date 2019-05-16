@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
 export class Discover extends Component {
+    constructor(props){
+      super(props);
+    }
     render() {
         return (
       <div className="discover-body">

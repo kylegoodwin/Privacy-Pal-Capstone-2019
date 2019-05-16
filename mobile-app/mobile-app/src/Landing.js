@@ -1,42 +1,81 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import './Landing.css';
-import './Landing2'
+import './Landing2';
+import Button from 'react-bootstrap/Button';
 import { useSwipeable, Swipeable } from 'react-swipeable'
+import Background from './landguy.jpg';
+import './SignUp.js';
+import { Link } from 'react-router-dom';
+
+
+var sectionStyle = {
+    height: '100vh',
+    width: '100%',
+    overflow: 'hidden',
+    backgroundImage: `url(${Background})`
+};
 export class Landing extends Component {
     constructor(props){
         super(props);
-        this.state = {clicked: false
+        this.state = {
+            // clicked: false, 
+            signup: false
         }
       }
     
-    handleClick = () => {
+    signIn = () => {
     this.setState({ clicked: true })
     }
+
+    signUp = () => {
+    this.setState({ signup: true })
+    }
+
     render() {
-        if (this.state.clicked) {
-            return (
-                <Redirect push to={'/Landing2'}/>
-            )
-        }
+        // if (this.state.clicked) {
+        //     return (
+        //         <Redirect push to={'/Landing2'}/>
+        //     )
+        // } else if (this.state.signup) {
+        //     return (
+        //         <Redirect push to={'/SignUp'}/>
+        //     )
+        // }
+
+        
+
         return (
-            <div id="landingBody" onClick={this.handleClick}>              
-            {/* <Swipeable onSwipedRight={(event) => this.handleClick}> */}
-                <div>
-                    <img className="vertical-align:middle" src='/img/Tab-Icon.png' alt="Logo" />
-                    <h1 className="text-white">PrivacyPal</h1>
-                    <h6 className="text-white">Your Road Map to </h6>
-                    <div className="col-md-12 bs-linebreak"> </div>
-                    <h6 id="future" className="text-white">the Future. </h6>
-                </div>
-                <div id="circles">
-                        <span className="dot"></span>
-                        <span id="other" className="dot"></span>
-                </div>
-                <Link to='/Landing2'>{this.props.title}</Link>
-            {/* </Swipeable> */}
-            </div>          
+            <div id="home" style={ sectionStyle }>
+                <div id="landingBody">  
+                    <div className="layer">
+                        <h5 className="text-light text-center pt-1">Create an account or login to track your progress and start learning about digital privacy</h5>
+                        <div className="wrapper d-line text-center"> 
+                            <Link to="/Landing2" className="nav-link d-inline">
+                                <Button className="b" variant="outline-warning">Sign In</Button>
+                            </Link>
+                            <Link to="/SignUp" className="/SignUp d-inline">
+                                <Button className="b ml-3" variant="outline-warning">Sign Up</Button>
+                            </Link>
+                        </div>
+                    </div>            
+                {/* <Swipeable onSwipedRight={(event) => this.handleClick}> */}
+                    <div>
+                        {/* <div class="card-overlay"> */}
+                        <h2 className="text-white">PrivacyPal</h2>
+                        <img id="logo" src="img/Tab-Icon.png" alt="icon"></img>
+                        <h5 id="map" className="text-white">Your Road Map to the</h5>
+                        <h5 id="futures" className="text-white">Future</h5>
+                    </div>
+                    <div id="circles">
+                            <span id="d1"></span>
+                            <span id="ultra" className="dot"></span>
+                    </div>
+                    {/* <Link to='/Landing2'>{this.props.title}</Link> */}
+                {/* </Swipeable> */}
+                {/* </div>    */}
+                </div>    
+        </div>  
         )
     }
 }

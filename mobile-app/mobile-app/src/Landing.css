@@ -1,5 +1,4 @@
-#landingBody {
-    /* The image used */
+/* #landingBody {
     background-image: url(landguy.jpg); 
     height: 100vh;
     background-size: cover;
@@ -14,27 +13,21 @@
     top: 125px;
     width: 70px;
     background-position: center;
-}
+} */
 
-#landingBody h1 {
-    position: relative;
-    left: 135px;
-    top: 30px;
-}
-
-#landingBody h6 {
-    position: relative;
-    left: 135px;
-    top: 20px;
+#landingBody h2 {
+    position: absolute;
+    top: 17%;
+    left: 34%;
 }
 
 #landingBody #future {
-    position: relative;
+    position: absolute;
     left: 135px;
     top: 10px;
 }
 
-.dot {
+#d1 {
     height: 20px;
     width: 20px;
     background-color: white;
@@ -44,7 +37,7 @@
     text-align: center;
 }
 
-#other {
+#ultra {
     height: 20px;
     width: 20px;
     background-color: #bbb;
@@ -53,8 +46,41 @@
     display: inline-block;
     text-align: center;
 }
+
 #circles {
-    position: relative;
-     top: 69%;
+    position: absolute;
+    top: 93%;
     left: 43%;
+}
+
+.layer {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    height: 20%;
+}
+
+.wrapper {
+    top: 10%;
+    position: relative;
+}
+
+#logo {
+    height: 85px;
+    position: absolute;
+    top: 17%;
+    left: 15%;
+}
+
+#map {
+    top: 22%;
+    left: 34%;
+    position: absolute;
+}
+
+#futures {
+    position: absolute;
+    top: 25%;
+    left: 34%;
 }
