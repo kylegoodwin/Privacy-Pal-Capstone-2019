@@ -50,7 +50,7 @@ const Network = [
     { type:"response", prompt: "Who would you interact with, follow, or be followed by on social media?"},
 ]
 
-export const last = [  
+const Moderation = [  
     { type:"response", prompt:"Which social media apps would you want to post on?"},
     { type:"question", question: {prompt: "True or false? If your account is public everyone can see what you post",
         answers:["True","False"],
