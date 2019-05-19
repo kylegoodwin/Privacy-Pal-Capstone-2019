@@ -39,7 +39,7 @@ export class Quiz extends Component {
     let display;
 
     if (!this.state.hasAnswered) {
-      display = <Question hasAnswered={this.hasAnswered} handleAnswer={this.handleAnswer} prompt={this.props.question.prompt} answers={answers} answer={this.props.question.correctIndex}> </Question>;
+      display = <Question hasAnswered={this.hasAnswered} isPhotoQuestion={this.props.isPhotoQuestion} handleAnswer={this.handleAnswer} prompt={this.props.question.prompt} question={this.props.question} answers={answers} answer={this.props.question.correctIndex}> </Question>;
     } else {
       display = <Answer correctAnswer={this.state.correctAnswer} question={this.props.question} buttonFunction={this.props.buttonFunction}></Answer>
     }
@@ -88,6 +88,7 @@ export class Question extends Component {
     return (
       <div className="question-body">
         <h1> Question 1:</h1>
+        {this.props.isPhotoQuestion && <img src={this.props.question.img}></img>}
         <h2>{this.props.prompt}</h2>
         {answers}
         <div onClick={this.handleNext} className="discuss-button">Submit</div>

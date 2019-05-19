@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
-let stories = [
-  { url: "img/moderation/story1.png", topText: "Posting In Moderation", bottomText: "Knowing How Much Is Too Much" },
-  { url: "img/moderation/story2.png", bottomText: "Posting on social media is a great way to let friends catch a glimpse of what is going on in your life" },
-  { url: "img/moderation/story3.png", topText: "But posting too frequently can reveal more about your personal life than you want" },
-  { url: "img/moderation/story4.png", topText: "If your account is public, you may be posting sensitive information to viewers outside your friend group" },
-  { url: "img/moderation/story5.png", bottomText: "By posting in moderation, you can still keep your followers entertained while keeping your personal life to yourself" },
-  { url: "img/moderation/story6.png", topText: "You've completed this lesson", bottomText: "Tap to the right to head back to the main page" }
-]
-
 export class Discover extends Component {
   render() {
     return (
@@ -34,7 +25,7 @@ class LearnCards extends Component {
         <DiscoverCard imageName="one" emoji="👀" title="Intro" link='/modules/identity' backColor='#FF847C' />
         <DiscoverCard imageName="two" emoji="🛑" title="Dont post too much!" link='/modules/moderation' backColor='#99B898'  />
         <DiscoverCard imageName="three" emoji="👺" title="Bullies" link='/modules/cyberbullying' backColor='#2A363B' />
-        <DiscoverCard imageName="four" emoji="⚔️" title="Protect your profile" link='/modules/who' backColor='#E84A5F' isLocked={true} />
+        <DiscoverCard imageName="four" emoji="⚔️" title="Protect your profile" link='/modules/who' backColor='#E84A5F' />
       </div>
 
     )
@@ -52,7 +43,7 @@ class QuizCards extends Component {
         <DiscoverCard imageName="one" title="Social Media" link='/response/socialmedia' backColor='#FF847C' />
         <DiscoverCard imageName="two" title="Internet Basics" link='/response/network' backColor='#99B898' />
         <DiscoverCard imageName="three" title="Internet Economy" link='/response/privacy' backColor='#2A363B' />
-        <DiscoverCard imageName="four" title="Location Services" link='/response/privacy' backColor='#E84A5F' isLocked={true} />
+        <DiscoverCard imageName="four" title="Location Services" link='/response/privacy' backColor='#E84A5F' />
       </div>
 
     )

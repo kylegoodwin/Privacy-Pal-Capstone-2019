@@ -1,5 +1,14 @@
  export const Content = {
     socialmedia: [
+        { type:"photo", 
+        question: {prompt: "Do you accept their request?",
+        img:"https://scontent.fsea1-1.fna.fbcdn.net/v/t1.0-9/17553837_10155159806989028_2320088981462403713_n.jpg?_nc_cat=109&_nc_ht=scontent.fsea1-1.fna&oh=bcad494257941b5ad60ee47d012a79e5&oe=5D9BAF3D",
+        answers:["Yes!","No!"],
+        correctIndex: 0,
+         correctText: "Keep this in mind throughout the rest of the questions.",
+          wrongText: ""
+          /* we want the answer to be correct no matter what*/
+      }},
         { type:"response", prompt:"What social media and game apps do you want to use?" },
         { type:"question", question: {prompt: "What do you use your phone the most for?",
         answers:["Phone Calls","Texting","Web-Browsing","Games"],

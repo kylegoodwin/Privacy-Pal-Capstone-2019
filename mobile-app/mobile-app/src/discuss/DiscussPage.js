@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Discuss } from './Discuss';
-import { Quiz } from './Quiz';
+import { Quiz} from './Quiz';
 import { Route, Redirect } from 'react-router-dom';
 
 export class DiscussPage extends Component {
@@ -39,6 +39,10 @@ export class DiscussPage extends Component {
 
     if( displayItem.type == "response"){
       return <Discuss buttonFunction={this.buttonFunction} prompt={displayItem.prompt}></Discuss>;
+    }
+
+    if(displayItem.type == "photo"){
+      return <Quiz isPhotoQuestion={true} question={displayItem.question} responseHandler={this.responseHandler} buttonFunction={this.buttonFunction} ></Quiz>;
     }
 
     //add in photo type of quiz
