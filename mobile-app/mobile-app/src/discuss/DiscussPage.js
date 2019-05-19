@@ -10,15 +10,32 @@ export class DiscussPage extends Component {
   constructor(props){
     super(props);
     this.state = {
-      questionNumber: 0
+      questionNumber: 0,
+      correctNumber: 0,
+      multiChoiceNumber: 0
     }
+  }
+
+  responseHandler = (correctAnswer) => {
+
+    let newNumber = this.state.multiChoiceNumber + 1;
+    this.setState({multiChoiceNumber: newNumber});
+
+
+    if(correctAnswer){
+    let newValue = this.state.correctNumber + 1;
+    this.setState({
+      correctNumber: newValue
+    })
+  }
+
   }
 
 
   whatContentToDisplay = (displayItem) => {
 
     if( displayItem.type == "question" ){
-      return <Quiz question={displayItem.question} buttonFunction={this.buttonFunction} ></Quiz>;
+      return <Quiz question={displayItem.question} responseHandler={this.responseHandler} buttonFunction={this.buttonFunction} ></Quiz>;
     }
 
     if( displayItem.type == "response"){
@@ -29,6 +46,9 @@ export class DiscussPage extends Component {
 
 
   }
+
+
+
 
 
   buttonFunction = () => {
@@ -47,12 +67,14 @@ export class DiscussPage extends Component {
     if( this.state.questionNumber < Content.length){
       display =  this.whatContentToDisplay(Content[this.state.questionNumber]);
     }else{
-      display = <Route><Redirect to="/Discover" /></Route>;
+      console.log("correct number : "+ this.state.correctNumber);
+      //display = <Route><Redirect to="/Discover" /></Route>;
+      display = <h1 className="quiz-final"> You got {this.state.correctNumber} right out of {this.state.multiChoiceNumber}!</h1>
     }
      
     return (
       <div>
-        <div className="story-toolbar"> <Link to="/"><img id="home-button" src="img/home.svg" /></Link>   </div>
+        <div className={"quiz-toolbar"}> <Link to="/"><img id="home-button" src="img/home.svg" /></Link>   </div>
         {display}
       </div>)
   }

@@ -25,7 +25,27 @@ export let stories = {
               { url: "img/friends/story10.png", topText: "Anyone can create a profile and make themselves seem like any type of person they want" },
               { url: "img/friends/story11.png", bottomText: "Anyone can create a profile and make themselves seem like any type of person they want" },
               { url: "img/friends/story12.png", topText: "You've completed this lesson", bottomText: "Tap to the right to head back to the main page" }
-       ]
+       ],
+
+       cyberbullying : [
+              {url:"img/cyberbullying/background1.png",topText:"This is Ben, a 7th grader at a local middle school"},
+              {url:"img/cyberbullying/background2.png",topText:"He is an avid twitter user, star basketball player, and a great student!"},
+              {url:"img/cyberbullying/background3.png",topText:"One day, he sees a tweet about a rumor regarding a female student at his school", bottomText:"The tweet claims the student was cheating on her boyfriend"},
+              {url:"img/cyberbullying/background4.png",topText:"Ben retweeted the tweet and the rumor kept spreading...", bottomText:"The poor girl was then buillied and lost good friendships"},
+              {url:"img/cyberbullying/background5.png",topText:"His retweet spread to his teachers, parents, and principal"},
+              {url:"img/cyberbullying/background1.png",topText:"Ben was suspended by his school for contributing to bullying", bottomText:"Ben had to learn the hard way, but you can learn from his mistakes"},
+              {url:"img/cyberbullying/background6.png",topText:"It is important to  not tweet potentially insensitive, harmful, or inappropriate information",bottomText:"Always be careful what you post online. If you have questions ask a parent"}
+          ],
+
+       who: [
+              {url: "img/who/depressedGirl.png", topText: "This is Anna, an 8th grader from your middle school"},
+              {url: "img/who/penandPhone.png", topText: "She loves to write and is a frequent user of Instagram"},
+              {url: "img/who/onPhone.png", topText: "Because she has a public account, she constantly has new, random followers", "bottomText": "These followers keep direct messaging her questions"},
+              {url: "img/who/standingInJacket.png", topText: "One account pretended to be her friend and asked for sensitive information"},
+              {url: "img/who/matrixCode.png", topText: "Anna, not knowing any better, sent over her passwords and sensitive information"},
+              {url: "img/who/depressedGirl.png", topText: "Anna’s information was then stolen leading to other people having her data", "bottomText": "Anna had to learn the hard way, but you can learn from his mistakes"},
+              {url: "img/who/momDaughter.png", topText: "She loves to write and is a frequent user of Instagram"}
+              ]
 
 
 }

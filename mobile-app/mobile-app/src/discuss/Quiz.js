@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const ALPHABET = ["A","B","C","D","E","F"];
+
 export class Quiz extends Component {
 
   constructor(props) {
@@ -23,7 +25,12 @@ export class Quiz extends Component {
       this.setState({
         correctAnswer: true
       })
+      this.props.responseHandler(true);
+    }else{
+      this.props.responseHandler(false);
     }
+
+    
   }
 
   render = () => {
@@ -46,11 +53,26 @@ export class Quiz extends Component {
 
 export class Question extends Component {
 
-  handleAnswer = (event) => {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      activeAnswer: -1
+    }
+  }
+
+  handleNext = () => {
     this.props.hasAnswered();
-    this.props.handleAnswer(event.target.id);
+    this.props.handleAnswer(this.state.activeAnswer);
 
+  }
+
+
+
+  handleAnswer = (event) => {
+    this.setState({
+      activeAnswer: event.target.id
+    })
   }
 
   render() {
@@ -59,7 +81,7 @@ export class Question extends Component {
 
     let answers = this.props.answers.map((question) => {
       questionIndex++;
-      return (<div id={questionIndex} onClick={this.handleAnswer}>{question}</div>)
+      return (<div className={(this.state.activeAnswer == questionIndex)? "quiz-answer quiz-answer-selected" : "quiz-answer"} id={questionIndex} onClick={this.handleAnswer}> <span> {ALPHABET[questionIndex]}</span> {question}</div>)
     })
 
 
@@ -68,8 +90,9 @@ export class Question extends Component {
         <h1> Question 1:</h1>
         <h2>{this.props.prompt}</h2>
         {answers}
-
+        <div onClick={this.handleNext} className="discuss-button">Submit</div>
       </div>
+      
     )
   }
 }
@@ -80,20 +103,22 @@ class Answer extends Component {
   render() {
 
     let display;
+    let img;
 
     if (this.props.correctAnswer) {
       display = this.props.question.correctText;
+      img = "https://media3.giphy.com/media/31lPv5L3aIvTi/giphy.gif?cid=790b76115cd5e6f4536f626b49c6dfef&rid=giphy.gif";
     } else {
       display = this.props.question.wrongText;
+      img = "https://media1.giphy.com/media/BvLBKDhHSZdAY/giphy.gif?cid=790b76115cd5e8f42e495176774a42a0&rid=giphy.gif";
     }
 
 
     return (
       <div className="quiz-answer-body">
-        <div>
-          <span> {display} </span>
-        </div>
-        <button onClick={this.props.buttonFunction} > Next Question </button>
+          <img src={img}></img>
+          <div className="quiz-answer-text"> {display} </div>
+        <div onClick={this.props.buttonFunction} className="discuss-button">Continue</div>
       </div>
     )
   }

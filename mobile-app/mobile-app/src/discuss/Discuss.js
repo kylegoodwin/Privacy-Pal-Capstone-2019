@@ -6,13 +6,20 @@ export class Discuss extends Component {
     return (
       <div className="discuss-body">
         <DiscussQuestion buttonFunction={this.props.buttonFunction} prompt={this.props.prompt}></DiscussQuestion>
-      </div>)
+      </div>) 
   }
 }
 
 
 
 class DiscussQuestion extends Component {
+
+  handleNext = () => {
+
+    document.getElementById("text-input").value = "";
+
+    this.props.buttonFunction();
+  }
 
   render() {
 
@@ -21,10 +28,11 @@ class DiscussQuestion extends Component {
         <div className="discuss-card">
           <div className="prompt-container">
           <span className="discuss-prompt">{this.props.prompt}</span>
-          <textarea>What do you think?</textarea>
-          <button onClick={this.props.buttonFunction} type="button"> Send </button>
+          <textarea id="text-input" placeholder="What do you think?"></textarea>
           </div>
+          
         </div>
+        <div onClick={this.handleNext} className="discuss-button">Continue</div>
       </div>
     )
   }
