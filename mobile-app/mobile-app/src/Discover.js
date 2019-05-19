@@ -49,10 +49,10 @@ class QuizCards extends Component {
     return (
 
       <div className="cards-container">
-        <DiscoverCard imageName="one" title="Social Media" link='/response/1' backColor='#FF847C' />
-        <DiscoverCard imageName="two" title="Internet Basics" link='/response/1' backColor='#99B898' isLocked={true} />
-        <DiscoverCard imageName="three" title="Internet Economy" link='/response/1' backColor='#2A363B' />
-        <DiscoverCard imageName="four" title="Location Services" link='/response/1' backColor='#E84A5F' />
+        <DiscoverCard imageName="one" title="Social Media" link='/response/socialmedia' backColor='#FF847C' />
+        <DiscoverCard imageName="two" title="Internet Basics" link='/response/network' backColor='#99B898' />
+        <DiscoverCard imageName="three" title="Internet Economy" link='/response/privacy' backColor='#2A363B' />
+        <DiscoverCard imageName="four" title="Location Services" link='/response/privacy' backColor='#E84A5F' isLocked={true} />
       </div>
 
     )

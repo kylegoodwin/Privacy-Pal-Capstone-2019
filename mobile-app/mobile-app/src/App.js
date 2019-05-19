@@ -22,7 +22,7 @@ class App extends Component {
             <Route  path='/modules/:name' render={(routeProps) => (
               <StoryRouter></StoryRouter>
             )} />
-            <Route exact path='/response/:number' render={(routeProps) => (
+            <Route exact path='/response/:name' render={(routeProps) => (
               <DiscussRouter />
             )} />
           </Switch>

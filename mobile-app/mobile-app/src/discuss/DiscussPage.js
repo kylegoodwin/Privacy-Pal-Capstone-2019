@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Discuss } from './Discuss';
 import { Quiz } from './Quiz';
-import {Content} from './content';
 import { Route, Redirect } from 'react-router-dom';
 
 export class DiscussPage extends Component {
@@ -64,8 +63,8 @@ export class DiscussPage extends Component {
 
     let display;
 
-    if( this.state.questionNumber < Content.length){
-      display =  this.whatContentToDisplay(Content[this.state.questionNumber]);
+    if( this.state.questionNumber < this.props.content.length){
+      display =  this.whatContentToDisplay(this.props.content[this.state.questionNumber]);
     }else{
       console.log("correct number : "+ this.state.correctNumber);
       //display = <Route><Redirect to="/Discover" /></Route>;
