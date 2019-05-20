@@ -1,5 +1,3 @@
-export 
-
 /* const Content = [
     { type:"question", question: { prompt: "Who can see your posts?",
      answers:["Everyone","Just me","My friends"],
@@ -25,7 +23,9 @@ export
 ]
 */
 
-const Identity = [  
+export const Content = {
+
+identity : [  
     
     { type:"question", question: {prompt: "Why do social media apps collect your user data?",
     answers:["To sell to advertisers","For fun","To help you with homework","To show your friends"],
@@ -50,9 +50,9 @@ const Identity = [
     }},
     { type:"response", prompt: "What type of content do you normally look for on social media sites?"},
     { type:"response", prompt: "If you have a social media account what do you use it for? If you don't have one why do you need one?"},
-]
+],
 
-const Network = [  
+network : [  
     { type:"question", question: {prompt: "If a person you don't know requests to follow you on Instagram, how do you decide if you should accept their request?",
         answers:["Double check their bio to make sure they are real", "Loot at recent posts if they have them", "See if you have mutual friends", "All of the above"],
         correctIndex: 3,
@@ -76,9 +76,9 @@ const Network = [
     }},
     { type:"response", prompt: "Are your social media accounts private or public? If you don't have social media yet, would you make them public or private? Why?"},
     { type:"response", prompt: "Who do you primarily interact with, follow, or be followed by on social media?"},
-]
+],
 
-const Moderation = [  
+moderation : [  
     { type:"question", question: {prompt: "True or false? If your account is public everyone can see what you post",
         answers:["True","False"],
         correctIndex: 0,
@@ -105,3 +105,5 @@ const Moderation = [
     { type:"response", prompt: "How often would you post on those apps?" },
     { type:"response", prompt: "What do you see yourself posting about?"},
 ]
+
+}
