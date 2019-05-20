@@ -19,6 +19,17 @@ export class Quiz extends Component {
     })
   }
 
+  handleNext = () => {
+
+    this.props.buttonFunction();
+    this.setState({
+      hasAnswered: false,
+      correctAnswer: false
+    })
+
+
+  }
+
   handleAnswer = (answer) => {
 
     if (answer == this.props.question.correctIndex) {
@@ -38,10 +49,11 @@ export class Quiz extends Component {
 
     let display;
 
+    console.log(this.state.hasAnswered);
     if (!this.state.hasAnswered) {
       display = <Question hasAnswered={this.hasAnswered} isPhotoQuestion={this.props.isPhotoQuestion} handleAnswer={this.handleAnswer} prompt={this.props.question.prompt} question={this.props.question} answers={answers} answer={this.props.question.correctIndex}> </Question>;
     } else {
-      display = <Answer correctAnswer={this.state.correctAnswer} question={this.props.question} buttonFunction={this.props.buttonFunction}></Answer>
+      display = <Answer correctAnswer={this.state.correctAnswer} question={this.props.question} buttonFunction={this.handleNext}></Answer>
     }
 
     return (
@@ -100,6 +112,7 @@ export class Question extends Component {
 
 
 class Answer extends Component {
+
 
   render() {
 

@@ -66,7 +66,7 @@ export let stories = {
               {url: "img/friends/story20.gif", topText: "You’re finished with the Online Friends and Network Lesson!", "bottomText": "Tap right, or go to the home button to work on the Discussion for this!"},
        ],
 
-       socialMediaIntro: [
+       intro: [
               { url: "img/introduction/story1.png", topText: "Introduction To Social Media", bottomText: "A guide to getting started" },
               { url: "img/introduction/story2.png", bottomText: "So you want an Instagram (or Snapchat) account?" },
               { url: "img/introduction/story3.png", topText: "Social media is a great way to stay connected with friends!" },

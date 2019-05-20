@@ -9,7 +9,8 @@ export class Discover extends Component {
         <Toolbar />
         <p>👆🏼Tap on a story below to learn more about your digital privacy </p>
         <LearnCards />
-        <h1>Discuss</h1>
+        <h1>Quiz Time!</h1>
+        <p> Finish the story above first! Then ➡️</p>
         <p>👆🏼 Tap on a module to test your knowlege, and discuss what you have learned. Complete them all to earn your badge!</p>
         <QuizCards ></QuizCards>
       </div>
@@ -22,10 +23,10 @@ class LearnCards extends Component {
   render() {
     return (
       <div className="cards-container">
-        <DiscoverCard imageName="one" emoji="👀" title="Intro" link='/modules/identity' backColor='#FF847C' />
+        <DiscoverCard imageName="one" emoji="👀" title="Intro" link='/modules/intro' backColor='#FF847C' />
         <DiscoverCard imageName="two" emoji="🛑" title="Dont post too much!" link='/modules/moderation' backColor='#99B898'  />
-        <DiscoverCard imageName="three" emoji="👺" title="Bullies" link='/modules/cyberbullying' backColor='#2A363B' />
-        <DiscoverCard imageName="four" emoji="⚔️" title="Protect your profile" link='/modules/who' backColor='#E84A5F' />
+        <DiscoverCard imageName="three" emoji="👫" title="Online Friends" link='/modules/friends' backColor='#2A363B' />
+        <DiscoverCard imageName="four" emoji="🤷🏽‍" title="Who are you online?" link='/modules/identity' backColor='#E84A5F' />
       </div>
 
     )
@@ -40,10 +41,10 @@ class QuizCards extends Component {
     return (
 
       <div className="cards-container">
-        <DiscoverCard imageName="one" title="Social Media" link='/response/socialmedia' backColor='#FF847C' />
-        <DiscoverCard imageName="two" title="Internet Basics" link='/response/network' backColor='#99B898' />
-        <DiscoverCard imageName="three" title="Internet Economy" link='/response/privacy' backColor='#2A363B' />
-        <DiscoverCard imageName="four" title="Location Services" link='/response/privacy' backColor='#E84A5F' />
+        <DiscoverCard  title="Moderation" link='/response/moderation' backColor='#99B898' />
+        <DiscoverCard  title="Friends" link='/response/friends' backColor='#2A363B' />
+        <DiscoverCard  title="Identity" link='/response/identity' backColor='#E84A5F' />
+        <DiscoverCard  emoji="🏁" title="Finish!" link='/response/identity' backColor='black' />
       </div>
 
     )
