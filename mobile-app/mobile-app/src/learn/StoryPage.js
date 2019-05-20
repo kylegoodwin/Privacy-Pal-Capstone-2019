@@ -26,7 +26,9 @@ export class StoryPage extends Component {
             this.setState({
                 storyIsFinished: true
             });
+            localStorage.setItem(this.props.storyName,"true");
         }
+        
     }
 
     tester = () => {

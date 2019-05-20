@@ -73,7 +73,7 @@ export let stories = {
               { url: "img/introduction/story4.gif", topText:"Not only can you post stuff about your life", bottomText: "You can also see what your friends have posted!" },
               { url: "img/introduction/story5.png", bottomText: "But there can be risks involved... " },
               { url: "img/introduction/story6.jpg", topText: "From scammers, to hackers, and even creeps", bottomText: "Social media has unknown threats lurking in the background" },
-              { url: "img/introduction/story7.png", bottomText: "It is a big responsibility when it comes to having a social media account" },
+              { url: "img/introduction/story7.jpg", bottomText: "It is a big responsibility when it comes to having a social media account" },
               { url: "img/introduction/story8.png", topText: "And we are here to help you become aware of these risks", bottomText: "Tap to the right to get back to the home page and begin learning!" },
        ],
 

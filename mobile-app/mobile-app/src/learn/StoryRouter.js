@@ -10,7 +10,7 @@ class ModuleProto extends Component {
         let currentLocation = this.props.match.params.name;
         console.log(currentLocation);
         return(
-        <StoryPage stories={stories[currentLocation]}></StoryPage>
+        <StoryPage storyName={currentLocation} stories={stories[currentLocation]}></StoryPage>
         )
     }
 }

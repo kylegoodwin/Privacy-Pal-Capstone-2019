@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
 export class Discover extends Component {
+
+  resetLocalStorage = () =>{
+    localStorage.clear();
+    window.location.reload();
+  }
+
   render() {
     return (
       <div className="discover-body">
@@ -13,6 +19,7 @@ export class Discover extends Component {
         <p> Finish the story above first! Then ➡️</p>
         <p>👆🏼 Tap on a module to test your knowlege, and discuss what you have learned. Complete them all to earn your badge!</p>
         <QuizCards ></QuizCards>
+        <button id="reset" onClick={this.resetLocalStorage}> Reset</button>
       </div>
     )
   }
@@ -38,13 +45,14 @@ class LearnCards extends Component {
 class QuizCards extends Component {
 
   render() {
+
     return (
 
       <div className="cards-container">
-        <DiscoverCard  title="Moderation" link='/response/moderation' backColor='#99B898' />
-        <DiscoverCard  title="Friends" link='/response/friends' backColor='#2A363B' />
-        <DiscoverCard  title="Identity" link='/response/identity' backColor='#E84A5F' />
-        <DiscoverCard  emoji="🏁" title="Finish!" link='/response/identity' backColor='black' />
+        <DiscoverCard  title="Moderation" link='/response/moderation' backColor='#99B898' isLocked={!(localStorage.getItem("intro") === "true")}/>
+        <DiscoverCard  title="Friends" link='/response/friends' backColor='#2A363B' isLocked={!(localStorage.getItem("moderation") === "true")} />
+        <DiscoverCard  title="Identity" link='/response/identity' backColor='#E84A5F' isLocked={!(localStorage.getItem("friends") === "true")} />
+        <DiscoverCard  emoji="🏁" title="Finish!" link='/response/identity' backColor='#99B898' isLocked={!(localStorage.getItem("identity") === "true") || !(localStorage.getItem("intro") === "true") || !(localStorage.getItem("moderation") === "true") || !(localStorage.getItem("friends") === "true")} />
       </div>
 
     )
@@ -65,6 +73,7 @@ class DiscoverCard extends Component {
   handleClick = () => {
     this.setState({ clicked: true })
   }
+
 
   render() {
 
