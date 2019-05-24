@@ -9,7 +9,8 @@ export class Quiz extends Component {
 
     this.state = {
       hasAnswered: false,
-      correctAnswer: false
+      correctAnswer: false,
+      questionNumber: 1
     }
   }
 
@@ -26,15 +27,17 @@ export class Quiz extends Component {
       hasAnswered: false,
       correctAnswer: false
     })
-
-
   }
 
   handleAnswer = (answer) => {
 
+    this.setState({
+      questionNumber: this.state.questionNumber + 1
+    })
+
     if (answer == this.props.question.correctIndex) {
       this.setState({
-        correctAnswer: true
+        correctAnswer: true,
       })
       this.props.responseHandler(true);
     }else{
@@ -51,7 +54,7 @@ export class Quiz extends Component {
 
     console.log(this.state.hasAnswered);
     if (!this.state.hasAnswered) {
-      display = <Question hasAnswered={this.hasAnswered} isPhotoQuestion={this.props.isPhotoQuestion} handleAnswer={this.handleAnswer} prompt={this.props.question.prompt} question={this.props.question} answers={answers} answer={this.props.question.correctIndex}> </Question>;
+      display = <Question hasAnswered={this.hasAnswered} isPhotoQuestion={this.props.isPhotoQuestion} handleAnswer={this.handleAnswer} prompt={this.props.question.prompt} question={this.props.question} answers={answers} answer={this.props.question.correctIndex} questionNumber={this.state.questionNumber}> </Question>;
     } else {
       display = <Answer correctAnswer={this.state.correctAnswer} question={this.props.question} buttonFunction={this.handleNext}></Answer>
     }
@@ -99,7 +102,7 @@ export class Question extends Component {
 
     return (
       <div className="question-body">
-        <h1> Question 1:</h1>
+        <h1> Question {this.props.questionNumber}:</h1>
         {this.props.isPhotoQuestion && <img src={this.props.question.img}></img>}
         <h2>{this.props.prompt}</h2>
         {answers}

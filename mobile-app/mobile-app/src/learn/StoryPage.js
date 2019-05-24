@@ -28,7 +28,6 @@ export class StoryPage extends Component {
             });
             localStorage.setItem(this.props.storyName,"true");
         }
-        
     }
 
     tester = () => {
@@ -48,7 +47,7 @@ export class StoryPage extends Component {
                 <div className="story-toolbar"> <img onClick={this.sendHome} id="home-button" src="img/home.svg"/>   </div>
                 {!this.state.storyIsFinished ? (
                     <Stories
-                        defaultInterval={4000}
+                        defaultInterval={8000}
                         stories={this.props.stories}
                         width={window.innerWidth}
                         height={window.innerHeight - 75}
