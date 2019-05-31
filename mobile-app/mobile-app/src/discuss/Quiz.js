@@ -43,8 +43,6 @@ export class Quiz extends Component {
     }else{
       this.props.responseHandler(false);
     }
-
-    
   }
 
   render = () => {
@@ -82,8 +80,6 @@ export class Question extends Component {
 
   }
 
-
-
   handleAnswer = (event) => {
     this.setState({
       activeAnswer: event.target.id
@@ -99,7 +95,6 @@ export class Question extends Component {
       return (<div className={(this.state.activeAnswer == questionIndex)? "quiz-answer quiz-answer-selected" : "quiz-answer"} id={questionIndex} onClick={this.handleAnswer}> <span> {ALPHABET[questionIndex]}</span> {question}</div>)
     })
 
-
     return (
       <div className="question-body">
         <h1> Question {this.props.questionNumber}:</h1>
@@ -112,7 +107,6 @@ export class Question extends Component {
     )
   }
 }
-
 
 class Answer extends Component {
 

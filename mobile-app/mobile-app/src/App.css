@@ -16,10 +16,15 @@ textarea {
   margin: auto;
 }
 
+html, body{
+  overflow-x: hidden;
+}
+
 body{
   font-family: Arial, Helvetica, sans-serif;
   background: #303c71;
   user-select: none;
+  position: relative;
 }
 
 .discover-body p {
@@ -38,7 +43,7 @@ body{
 }
 
 .discover-body p,.discover-body h1{
-  margin-left:  30px;
+  margin-left:  50px;
   margin-bottom: 20px;
 }
 
@@ -169,10 +174,9 @@ h2,a,a:hover{
   padding: 1em;
   border-radius: 10px;
   resize: none;
-
 }
 
-.discuss-card button{
+.discuss-card button, .final-body button{
   background-color: white;
   font-size: 1.5em;
   border: none;
@@ -182,6 +186,45 @@ h2,a,a:hover{
   border: 2px solid black;
 }
 
+.final-body img{
+  margin-top: 100px;
+}
+
+.final-body p,.final-body li, label{
+  margin: 1em;
+  font-size: 1.5em;
+}
+
+.final-body button{
+  width: initial;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.final-body{
+ background-color: white;
+}
+
+.final-body input{
+  margin-left: 1em;
+  padding: .5em;
+  width: 50%;
+}
+
+.final-body-center{
+width: 100%;
+text-align: center;
+}
+
+.final-body h1{
+  margin: 1em;
+  text-align: center;
+}
 
 .quiz-answer-body button{ 
   font-size: 1em;
@@ -196,8 +239,6 @@ h2,a,a:hover{
   font-size: 1.25em;
 }
 
-
-
 .quiz-answer-selected{
   box-shadow: 5px 10px #303030;
 }
@@ -206,7 +247,6 @@ h2,a,a:hover{
   background: #303030 !important;
   color: white;
 }
-
 
 .quiz-answer span{
   background: #eeedf0;
@@ -245,5 +285,9 @@ h2,a,a:hover{
 
 #reset{
   margin-top: 50px;
+}
+
+#final-image{
+  width: 80%;
 }
 

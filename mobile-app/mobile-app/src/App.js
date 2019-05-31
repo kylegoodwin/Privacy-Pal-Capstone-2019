@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Discover } from './Discover';
 import { HashRouter as Router, Route, Switch,Redirect } from 'react-router-dom';
 import { StoryRouter } from './learn/StoryRouter';
 import {DiscussRouter } from './discuss/DiscussRouter';
+import {FinalPage} from './final';
 
 
 class App extends Component {
@@ -24,6 +24,9 @@ class App extends Component {
             )} />
             <Route exact path='/response/:name' render={(routeProps) => (
               <DiscussRouter />
+            )} />
+            <Route exact path='/finished' render={(routeProps) => (
+              <FinalPage />
             )} />
           </Switch>
         </Router>

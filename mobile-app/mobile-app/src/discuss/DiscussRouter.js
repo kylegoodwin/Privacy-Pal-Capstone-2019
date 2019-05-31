@@ -8,7 +8,7 @@ class ModuleProto extends Component {
     render() {
         let currentLocation = this.props.match.params.name;
         return(
-        <DiscussPage content={content[currentLocation]}></DiscussPage>
+        <DiscussPage name={currentLocation} content={content[currentLocation]}></DiscussPage>
         )
     }
 }

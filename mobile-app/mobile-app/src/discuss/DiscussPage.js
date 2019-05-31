@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Discuss } from './Discuss';
-import { Quiz} from './Quiz';
-import { Route, Redirect } from 'react-router-dom';
+import { Quiz } from './Quiz';
 
 export class DiscussPage extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       questionNumber: 0,
@@ -18,30 +17,30 @@ export class DiscussPage extends Component {
   responseHandler = (correctAnswer) => {
 
     let newNumber = this.state.multiChoiceNumber + 1;
-    this.setState({multiChoiceNumber: newNumber});
+    this.setState({ multiChoiceNumber: newNumber });
 
 
-    if(correctAnswer){
-    let newValue = this.state.correctNumber + 1;
-    this.setState({
-      correctNumber: newValue
-    })
-  }
+    if (correctAnswer) {
+      let newValue = this.state.correctNumber + 1;
+      this.setState({
+        correctNumber: newValue
+      })
+    }
 
   }
 
 
   whatContentToDisplay = (displayItem) => {
 
-    if( displayItem.type == "question" ){
+    if (displayItem.type == "question") {
       return <Quiz question={displayItem.question} responseHandler={this.responseHandler} buttonFunction={this.buttonFunction} ></Quiz>;
     }
 
-    if( displayItem.type == "response"){
+    if (displayItem.type == "response") {
       return <Discuss buttonFunction={this.buttonFunction} prompt={displayItem.prompt}></Discuss>;
     }
 
-    if(displayItem.type == "photo"){
+    if (displayItem.type == "photo") {
       return <Quiz isPhotoQuestion={true} question={displayItem.question} responseHandler={this.responseHandler} buttonFunction={this.buttonFunction} ></Quiz>;
     }
 
@@ -55,7 +54,7 @@ export class DiscussPage extends Component {
 
 
   buttonFunction = () => {
-    
+
     let newValue = this.state.questionNumber + 1;
     this.setState({
       questionNumber: newValue
@@ -67,14 +66,14 @@ export class DiscussPage extends Component {
 
     let display;
 
-    if( this.state.questionNumber < this.props.content.length){
-      display =  this.whatContentToDisplay(this.props.content[this.state.questionNumber]);
-    }else{
-      console.log("correct number : "+ this.state.correctNumber);
-      //display = <Route><Redirect to="/Discover" /></Route>;
+    if (this.state.questionNumber < this.props.content.length) {
+      display = this.whatContentToDisplay(this.props.content[this.state.questionNumber]);
+    } else {
+      console.log(this.props.name);
+      localStorage.setItem("quiz " + this.props.name, `${this.state.correctNumber}/${this.state.multiChoiceNumber}`)
       display = <h1 className="quiz-final"> You got {this.state.correctNumber} right out of {this.state.multiChoiceNumber}!</h1>
     }
-     
+
     return (
       <div>
         <div className={"quiz-toolbar"}> <Link to="/"><img id="home-button" src="img/home.svg" /></Link>   </div>
