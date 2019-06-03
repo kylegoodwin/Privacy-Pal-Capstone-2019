@@ -3,8 +3,44 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import './Landing.css';
 import './Landing2'
-import { useSwipeable, Swipeable } from 'react-swipeable'
-export class Landing extends Component {
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+import Pagination from './Pagination';
+
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+const styles = {
+logo:{
+    width: '80%',
+
+},
+pagination:{
+    backgroundColor: 'black',
+    height: '100px',
+    width: '100px',
+},
+  root: {
+    position: 'relative',
+    height: '100vh',
+  },
+  slide: {
+    padding: 15,
+    height: '100vh',
+    color: '#fff',
+  },
+  slide1: {
+    backgroundColor: '#FEA900',
+    textAlign: 'center',
+  },
+  slide2: {
+    backgroundColor: '#B3DC4A',
+  },
+  slide3: {
+    backgroundColor: '#6AC0FF',
+  },
+};
+
+export class Landingd extends Component {
     constructor(props){
         super(props);
         this.state = {clicked: false
@@ -22,22 +58,51 @@ export class Landing extends Component {
         }
         return (
             <div id="landingBody" onClick={this.handleClick}>              
-            {/* <Swipeable onSwipedRight={(event) => this.handleClick}> */}
-                <div>
-                    <img className="vertical-align:middle" src='/img/Tab-Icon.png' alt="Logo" />
-                    <h1 className="text-white">PrivacyPal</h1>
-                    <h6 className="text-white">Your Road Map to </h6>
-                    <div className="col-md-12 bs-linebreak"> </div>
-                    <h6 id="future" className="text-white">the Future. </h6>
-                </div>
-                <div id="circles">
-                        <span className="dot"></span>
-                        <span id="other" className="dot"></span>
-                </div>
-                <Link to='/Landing2'>{this.props.title}</Link>
-            {/* </Swipeable> */}
             </div>          
         )
     }
 }
+
+export class Landing extends Component {
+    state = {
+      index: 0,
+    };
+  
+    handleChangeIndex = index => {
+      this.setState({
+        index,
+      });
+    };
+  
+    render() {
+      const { index } = this.state;
+  
+      return (
+        <div style={styles.root}>
+          <SwipeableViews index={index} enableMouseEvents onChangeIndex={this.handleChangeIndex}>
+            <SlideOne></SlideOne>
+            <div style={Object.assign({}, styles.slide, styles.slide2)}>slide n°2</div>
+            <div style={Object.assign({}, styles.slide, styles.slide3)}>slide n°3</div>
+          </SwipeableViews>
+          <Pagination dots={3} index={index} onChangeIndex={this.handleChangeIndex} />
+        </div>
+      );
+    }
+  }
+
+  class SlideOne extends Component{
+
+
+    render(){
+        return(
+        <div style={Object.assign({}, styles.slide, styles.slide1)}>
+        <img style={Object.assign({}, styles.logo)} src="img/HeaderLogo.png"></img>
+        
+        
+        </div>
+        )
+    }
+
+
+  }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Discover } from './Discover';
+import {Landing} from './landing/Landing';
 import { HashRouter as Router, Route, Switch,Redirect } from 'react-router-dom';
 import { StoryRouter } from './learn/StoryRouter';
 import {DiscussRouter } from './discuss/DiscussRouter';
@@ -13,6 +14,9 @@ class App extends Component {
       <div>
         <Router>
           <Switch>
+          <Route exact path='/landing' render={(routeProps) => (
+              <Landing></Landing>
+            )} />
             <Route exact path='/' render={(routeProps) => (
               <Discover></Discover>
             )} />
