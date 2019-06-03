@@ -3,12 +3,9 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import {Redirect} from 'react-router'
 
-
-
 let apiKey = 'SG.KOunLzpMQMmfIF1ucbAZsw.'
 apiKey += 'yETl8sf7U6gLpeezuq1YpuXO25gUIzYsuwY6f'
 apiKey += 'VNBREM'
-//'{"personalizations":[{"to":[{"email":"kjgoodwins@gmail.com"}],"dynamic_template_data": {"parentName" : "fuck"}],"from":{"email":"app@privacypal.me"},"subject":"Your student completed their course!","template_id":"d-560d6a6780244dfdae5f69f9dfd0f143"}'
 
 export default () => {
   const { width, height } = useWindowSize()
