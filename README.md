@@ -11,3 +11,6 @@ New modules can be loaded into our platform through JSON files. If one wanted to
 
 ## Improvements For The Future 
 Currently there is no log-in feature. We felt with that with the current breadth of the material that storing data locally and erasing it between sessions was more efficient. However, if more content/modules were added, a log-in feature to track user data more permanently is recommended. 
+
+## Questions
+Please contact Kyle Goodman: kjgoodwins@gmail.com
