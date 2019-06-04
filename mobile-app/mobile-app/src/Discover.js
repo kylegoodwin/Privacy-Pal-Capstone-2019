@@ -77,9 +77,9 @@ class QuizCards extends Component {
     return (
 
       <div className="cards-container">
-        <DiscoverCard title="Moderation" emoji="🛑" link='/response/moderation' backColor='#99B898' isLocked={!(localStorage.getItem("intro") === "true")} />
-        <DiscoverCard title="Friends" emoji="👫" link='/response/friends' backColor='#2A363B' isLocked={!(localStorage.getItem("moderation") === "true")} />
-        <DiscoverCard title="Identity" emoji="🤷🏽‍" link='/response/identity' backColor='#E84A5F' isLocked={!(localStorage.getItem("friends") === "true")} />
+        <DiscoverCard title="Moderation" emoji="🛑" link='/response/moderation' backColor='#99B898' isLocked={!(localStorage.getItem("moderation") === "true")} />
+        <DiscoverCard title="Friends" emoji="👫" link='/response/friends' backColor='#2A363B' isLocked={!(localStorage.getItem("friends") === "true")} />
+        <DiscoverCard title="Identity" emoji="🤷🏽‍" link='/response/identity' backColor='#E84A5F' isLocked={!(localStorage.getItem("identity") === "true")} />
         <DiscoverCard emoji="🏁" title="When you finish all 3 tap here!" link='/finished' backColor='#99B898' isFinal={true} isUnlocked={finalBool}/>
       </div>
 

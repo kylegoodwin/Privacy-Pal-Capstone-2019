@@ -79,7 +79,7 @@ export class DiscussPage extends Component {
       <div>
         <div className={"quiz-toolbar"}> <Link to="/"><img id="home-button" src="img/home.svg" /></Link>   </div>
         {display}
-        {!quizNotDone && <div onClick={this.handleClick} className="discuss-button">Continue</div>}
+        {!quizNotDone && <Link to={'/'} ><div className="discuss-button">Continue</div></Link>}
       </div>)
   }
 }
