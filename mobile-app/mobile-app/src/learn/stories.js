@@ -57,6 +57,8 @@ export let stories = {
        ],
 
        intro: [
+              { url: "img/introduction/intro1.png", topText:"Welcome to PrivacyPal Learning!", bottomText:"Tap the hand to move to the next slide!"},
+              { url: "img/introduction/intro2.png", topText:"While reading, you can tap to the right to skip forward. Or tap left to get to the previous screen in the lesson", bottomText:"Or you can hold down in the center to pause the screen"},
               { url: "img/introduction/story1.png", topText: "Introduction To Social Media", bottomText: "A guide to getting started" },
               { url: "img/introduction/story2.png", bottomText: "So you want an Instagram (or Snapchat) account?" },
               { url: "img/introduction/story3.png", topText: "Social media is a great way to stay connected with friends!" },
