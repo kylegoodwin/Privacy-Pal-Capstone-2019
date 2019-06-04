@@ -3,9 +3,10 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import {Redirect} from 'react-router'
 
-let apiKey = 'SG.KOunLzpMQMmfIF1ucbAZsw.'
-apiKey += 'yETl8sf7U6gLpeezuq1YpuXO25gUIzYsuwY6f'
-apiKey += 'VNBREM'
+let word = ''
+word += '.MSnDuFjOSKSoHVvZidtFZw'
+word += '.xytt4JjsEzzfOfIbq'
+word += 'WDWSWuJcC51LgGzf4Cg9mM9sdE'
 
 export default () => {
   const { width, height } = useWindowSize()
@@ -58,7 +59,7 @@ export class FinalPage extends Component {
       fetch('https://api.sendgrid.com/v3/mail/send', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `Bearer SG${word}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(email)

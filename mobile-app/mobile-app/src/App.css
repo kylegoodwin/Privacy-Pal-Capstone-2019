@@ -50,7 +50,7 @@ body{
 }
 
 .discover-body p {
- width: 70%;
+ width: 80%;
  color: white;
  text-align: left;
  font-size: 1em;
@@ -65,7 +65,7 @@ body{
 }
 
 .discover-body p,.discover-body h1{
-  margin-left:  50px;
+  margin-left:  25px;
   margin-bottom: 20px;
 }
 
@@ -316,6 +316,8 @@ text-align: center;
   width: 80%;
 }
 
+
+
 /* Minimum width */
 @media (max-width: 380px) {
 
@@ -340,11 +342,6 @@ text-align: center;
     .quiz-answer {
       font-size: 1.25em;
     }
-
-    .discover-body p,.discover-body h1{
-      margin-left:  25px;
-    }
-
 
 }
 
