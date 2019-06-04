@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const styles = {
   root: {
-    height: 18,
     width: 25,
     cursor: 'pointer',
     border: 0,
@@ -15,7 +14,6 @@ const styles = {
     height: 20,
     width: 20,
     borderRadius: 10,
-    margin: 3,
   },
   active: {
     backgroundColor: '#319fd6',

@@ -10,6 +10,28 @@ textarea {
   resize: none; /*remove the resize handle on the bottom right*/
 }
 
+.landing-text{
+margin: 1em;
+font-size: 1.75em;
+}
+
+.landing-text-container li{
+  margin-top: 1em;
+  text-align: left;
+  font-size: 1em;
+}
+
+.landing-text-container ol{
+  text-align: left;
+}
+
+.discover-body .discuss-button{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 80%;
+}
+
+
 .quiz-body img{
   display: block;
   height: 50%;

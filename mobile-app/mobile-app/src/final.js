@@ -83,6 +83,8 @@ export class FinalPage extends Component {
 
   render() {
 
+    window.scrollTo(0, 0);
+
     if( this.state.clicked){
       return( <Redirect push to={"/"} />)
     }
@@ -99,7 +101,7 @@ export class FinalPage extends Component {
       width={window.innerWidth}
       height={500}
     />
-        <div class="final-body-center">
+        <div className="final-body-center">
           <img id="final-image" src="img/badge.svg"></img>
         </div>
         <h1>Congratulations!</h1>
@@ -107,11 +109,11 @@ export class FinalPage extends Component {
           You have finished the social media module and are ready to make friends online! To prove what you know, we will send your scores to your parents. You must also agree to this contract below!
           </p>
         <form>
-          <label for="parent-email">Parents First Name:</label>
+          <label htmlFor="parent-email">Parents First Name:</label>
           <br></br>
           <input id="parent-name" type="text" />
           <br></br>
-          <label for="parent-email">Parents Email:</label>
+          <label htmlFor="parent-email">Parents Email:</label>
           <br></br>
           <input id="parent-email" type="text" />
           <br></br>
@@ -122,7 +124,7 @@ export class FinalPage extends Component {
             <li>Only interact with people I actually know and carefully check who I connect with</li>
             <li>Be conscious of what personal information I put online</li>
           </ol>
-          <label for="student-name">Sign Here:</label><input id="student-name" type="text" />
+          <label htmlFor="student-name">Sign Here:</label><input id="student-name" type="text" />
           <br></br>
           <div class="final-body-center">
             <button onClick={this.sendEmail}> I agree, email my parents!</button>

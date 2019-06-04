@@ -4,9 +4,12 @@ import { Redirect } from 'react-router';
 
 export class Discover extends Component {
 
-  resetLocalStorage = () => {
-    localStorage.clear();
-    //window.location.reload();
+  constructor(props){
+    super(props);
+
+    this.state = {
+      cheat: false
+    }
   }
 
   getUrlVars = () => {
@@ -15,6 +18,14 @@ export class Discover extends Component {
       vars[key] = value;
     });
     return vars;
+  }
+
+  resetFunction = () => {
+    window.location.assign("/#/reset");
+  }
+
+  cheatFunction = () => {
+    this.setState({cheat: true});
   }
 
   render = () => {
@@ -34,7 +45,9 @@ export class Discover extends Component {
         <h1>Quiz Time!</h1>
         <p> Finish the story above first! Then ➡️</p>
         <p>👆🏼 Tap on a module to test your knowlege, and discuss what you have learned. Complete them all to earn your badge!</p>
-        <QuizCards ></QuizCards>
+        <QuizCards cheat={this.state.cheat} ></QuizCards>
+        <div onClick={this.resetFunction} className="discuss-button">Reset (Demo)</div>
+        <div onClick={this.cheatFunction} className="discuss-button">Cheat (Demo)</div>
       </div>
     )
   }
@@ -60,7 +73,7 @@ class LearnCards extends Component {
 class QuizCards extends Component {
 
   render() {
-    let finalBool = localStorage.getItem("quiz identity") && localStorage.getItem("quiz moderation") && localStorage.getItem("quiz friends")
+    let finalBool = (localStorage.getItem("quiz identity") && localStorage.getItem("quiz moderation") && localStorage.getItem("quiz friends")) || this.props.cheat;
     return (
 
       <div className="cards-container">
