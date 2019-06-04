@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router';
-import './Landing.css';
-import './Landing2'
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import Pagination from './Pagination';
-import Button from 'react-bootstrap/Button';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 

@@ -64,7 +64,7 @@ friends : [
     }},
     { type:"question", question: {prompt: "True or false, you should let anyone follow you or be friends with you online",
         answers:["True", "False"],
-        correctIndex: 3,
+        correctIndex: 1,
          correctText: "Correct! Although it might make you seem more popular, these accounts could be run by dangerous people.",
           wrongText: "Incorrect. You should keep your network to only those that you know."
           /* 0-30 and 1-2 hrs are correct answers, 3-4 and 4+ hrs are inncorrect answers*/
@@ -88,8 +88,8 @@ moderation : [
           wrongText: "Incorrect, public means your account is open to the entire world"
       }},
 
-      { type:"question", question: {prompt: "What's a healthy amount of posting?",
-        answers:["Never", "Everyday", "Multiple Times A Day", "Only When Big Things In Your Life Happen"],
+      { type:"question", question: {prompt: "If you are irresponsible with what you post online, which of the following is NOT a potential consequence?",
+        answers:["Your post can be reported as a crime if it is offensive", "Your school may get you in trouble", "Your parents can punish you", "You get more likes on your post"],
         correctIndex: 3,
          correctText: "Correct! You want to keep your followers informed but wihtout revealing too much of your personal life",
           wrongText: "Incorrect. Posting too frequently can bore your followers and expose a lot of information about you"
@@ -104,8 +104,8 @@ moderation : [
       
     }},
 
-    { type:"response", prompt: "How often would you post on those apps?" },
-    { type:"response", prompt: "What do you see yourself posting about?"},
+    { type:"response", prompt: "Which social media apps do you have an account on?" },
+    { type:"response", prompt: "How often do you post on these accounts and what type of content do you post about?"},
 ]
 
 }

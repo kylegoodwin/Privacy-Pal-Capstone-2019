@@ -89,11 +89,10 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
-  margin-left: 2em;
+  margin-left: 1em;
 }
 
 .card{
-  /*width: 220px;*/
   flex-basis: 40%;
   height: 150px;
   margin: 6px;
@@ -311,5 +310,33 @@ text-align: center;
 
 #final-image{
   width: 80%;
+}
+
+/* Minimum width */
+@media (max-width: 380px) {
+
+  .landing-text{
+    margin: 1em;
+    font-size: 1.25em;
+    }
+    
+    .landing-text-container li{
+      margin-top: 1em;
+      text-align: left;
+      font-size: 1em;
+    }
+
+    .question-body h2{
+      font-size: 1.5em;
+    }
+    .question-body h1{
+      font-size: 1.5em;
+    }
+
+    .quiz-answer {
+      font-size: 1.25em;
+    }
+
+
 }
 

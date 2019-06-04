@@ -92,7 +92,7 @@ export class Question extends Component {
 
     let answers = this.props.answers.map((question) => {
       questionIndex++;
-      return (<div className={(this.state.activeAnswer == questionIndex)? "quiz-answer quiz-answer-selected" : "quiz-answer"} id={questionIndex} onClick={this.handleAnswer}> <span> {ALPHABET[questionIndex]}</span> {question}</div>)
+      return (<div className={(this.state.activeAnswer == questionIndex)? "quiz-answer quiz-answer-selected" : "quiz-answer"} id={questionIndex} onClick={this.handleAnswer}> <span id={questionIndex} onClick={this.handleAnswer}> {ALPHABET[questionIndex]}</span> {question}</div>)
     })
 
     return (

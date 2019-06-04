@@ -65,8 +65,9 @@ export class DiscussPage extends Component {
   render() {
 
     let display;
+    let quizNotDone = (this.state.questionNumber < this.props.content.length);
 
-    if (this.state.questionNumber < this.props.content.length) {
+    if (quizNotDone) {
       display = this.whatContentToDisplay(this.props.content[this.state.questionNumber]);
     } else {
       console.log(this.props.name);
@@ -78,6 +79,7 @@ export class DiscussPage extends Component {
       <div>
         <div className={"quiz-toolbar"}> <Link to="/"><img id="home-button" src="img/home.svg" /></Link>   </div>
         {display}
+        {!quizNotDone && <div onClick={this.handleClick} className="discuss-button">Continue</div>}
       </div>)
   }
 }

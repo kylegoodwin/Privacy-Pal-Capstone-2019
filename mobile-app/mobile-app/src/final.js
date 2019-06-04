@@ -76,27 +76,16 @@ export class FinalPage extends Component {
     } else {
       alert("Error with email information given!");
     }
-
-
   }
-
 
   render() {
 
     window.scrollTo(0, 0);
-
     if( this.state.clicked){
       return( <Redirect push to={"/"} />)
     }
-
-
     return (
-
-
       <div className="final-body">
-
-
-
           <Confetti
       width={window.innerWidth}
       height={500}
@@ -117,7 +106,7 @@ export class FinalPage extends Component {
           <br></br>
           <input id="parent-email" type="text" />
           <br></br>
-          <h1> I agree to this Contract about my Social Media use:</h1>
+          <h1> I Agree to this Contract About my Social Media use:</h1>
           <ol>
             <li>Use social media in a way that is respectful to myself and others</li>
             <li>Limit my use and time on social media to a healthy amount</li>
